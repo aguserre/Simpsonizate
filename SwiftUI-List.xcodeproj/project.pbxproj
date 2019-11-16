@@ -18,6 +18,9 @@
 		0FE29EA82380379300BC68C2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0FE29EA72380379300BC68C2 /* SDWebImageSwiftUI */; };
 		0FE29EAE2380388500BC68C2 /* QuotesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29EAD2380388500BC68C2 /* QuotesDAO.swift */; };
 		0FE29EB02380391B00BC68C2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29EAF2380391B00BC68C2 /* Quote.swift */; };
+		0FE29EB223808CCB00BC68C2 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29EB123808CCB00BC68C2 /* QuotesView.swift */; };
+		0FE29EB6238097CE00BC68C2 /* PortImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29EB5238097CE00BC68C2 /* PortImage.swift */; };
+		0FE29EBC2380A83F00BC68C2 /* json.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FE29EBB2380A83F00BC68C2 /* json.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		0FE29E9423802A0000BC68C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FE29EAD2380388500BC68C2 /* QuotesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesDAO.swift; sourceTree = "<group>"; };
 		0FE29EAF2380391B00BC68C2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		0FE29EB123808CCB00BC68C2 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		0FE29EB5238097CE00BC68C2 /* PortImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortImage.swift; sourceTree = "<group>"; };
+		0FE29EBB2380A83F00BC68C2 /* json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +72,13 @@
 		0FE29E85238029FF00BC68C2 /* SwiftUI-List */ = {
 			isa = PBXGroup;
 			children = (
+				0FE29EB42380974C00BC68C2 /* resourses */,
+				0FE29EB723809D6100BC68C2 /* viewControllers */,
+				0FE29EB32380972A00BC68C2 /* views */,
 				0FE29EAC2380386F00BC68C2 /* models */,
 				0FE29EAB2380386200BC68C2 /* dao */,
-				0FE29EA92380384C00BC68C2 /* service */,
-				0FE29E86238029FF00BC68C2 /* AppDelegate.swift */,
-				0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */,
-				0FE29E8A238029FF00BC68C2 /* ContentView.swift */,
-				0FE29E8C23802A0000BC68C2 /* Assets.xcassets */,
-				0FE29E9123802A0000BC68C2 /* LaunchScreen.storyboard */,
 				0FE29E9423802A0000BC68C2 /* Info.plist */,
+				0FE29EBB2380A83F00BC68C2 /* json.json */,
 				0FE29E8E23802A0000BC68C2 /* Preview Content */,
 			);
 			path = "SwiftUI-List";
@@ -86,13 +90,6 @@
 				0FE29E8F23802A0000BC68C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0FE29EA92380384C00BC68C2 /* service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = service;
 			sourceTree = "<group>";
 		};
 		0FE29EAB2380386200BC68C2 /* dao */ = {
@@ -109,6 +106,34 @@
 				0FE29EAF2380391B00BC68C2 /* Quote.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		0FE29EB32380972A00BC68C2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0FE29EB5238097CE00BC68C2 /* PortImage.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		0FE29EB42380974C00BC68C2 /* resourses */ = {
+			isa = PBXGroup;
+			children = (
+				0FE29E8C23802A0000BC68C2 /* Assets.xcassets */,
+				0FE29E86238029FF00BC68C2 /* AppDelegate.swift */,
+				0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */,
+				0FE29E9123802A0000BC68C2 /* LaunchScreen.storyboard */,
+			);
+			path = resourses;
+			sourceTree = "<group>";
+		};
+		0FE29EB723809D6100BC68C2 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FE29E8A238029FF00BC68C2 /* ContentView.swift */,
+				0FE29EB123808CCB00BC68C2 /* QuotesView.swift */,
+			);
+			name = viewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +207,7 @@
 				0FE29E9323802A0000BC68C2 /* LaunchScreen.storyboard in Resources */,
 				0FE29E9023802A0000BC68C2 /* Preview Assets.xcassets in Resources */,
 				0FE29E8D23802A0000BC68C2 /* Assets.xcassets in Resources */,
+				0FE29EBC2380A83F00BC68C2 /* json.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,11 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE29EB223808CCB00BC68C2 /* QuotesView.swift in Sources */,
 				0FE29E87238029FF00BC68C2 /* AppDelegate.swift in Sources */,
 				0FE29E89238029FF00BC68C2 /* SceneDelegate.swift in Sources */,
 				0FE29E8B238029FF00BC68C2 /* ContentView.swift in Sources */,
 				0FE29EB02380391B00BC68C2 /* Quote.swift in Sources */,
 				0FE29EAE2380388500BC68C2 /* QuotesDAO.swift in Sources */,
+				0FE29EB6238097CE00BC68C2 /* PortImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
