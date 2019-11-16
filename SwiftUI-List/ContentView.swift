@@ -7,10 +7,38 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct ContentView: View {
+    
+    @ObservedObject var service = QuoteDAO()
+    
     var body: some View {
-        Text("Hello World")
+
+        NavigationView {
+            List(service.quotes){ i in
+                cell(quote: i.quote, character: i.character, image: i.image)
+            }
+        }.navigationBarTitle("Simpsons Quotes")
+    }
+}
+
+struct cell: View {
+    
+    var quote = ""
+    var character = ""
+    var image = ""
+    
+    var body : some View {
+        HStack {
+            WebImage(url: URL(string: image)).resizable().frame(width: 50, height: 50)
+            VStack (alignment: .leading) {
+                Text(character).font(.headline)
+                Text(quote).font(.subheadline).lineLimit(nil)
+            }
+        }
     }
 }
 
@@ -19,3 +47,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
