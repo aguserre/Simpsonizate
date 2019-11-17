@@ -16,9 +16,13 @@ struct QuotesView: View {
     @ObservedObject var service = QuoteDAO()
     
     var body: some View {
+        ZStack{
+            Color.yellow
             List(service.quotes){ i in
                 cell(quote: i.quote, character: i.character, image: i.image)
             }
+        }.navigationBarTitle("Quotes", displayMode: .inline)
+
     }
 }
 

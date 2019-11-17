@@ -18,10 +18,9 @@ struct ContentView: View {
                 
                 }
             }
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarTitle("Welcome")
         }
-
-        
-    
     }
     
 }
