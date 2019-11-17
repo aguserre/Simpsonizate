@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7687092380D7150023D5D8 /* SimpsonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7687082380D7150023D5D8 /* SimpsonDetail.swift */; };
 		0FE29E87238029FF00BC68C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E86238029FF00BC68C2 /* AppDelegate.swift */; };
 		0FE29E89238029FF00BC68C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */; };
 		0FE29E8B238029FF00BC68C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E8A238029FF00BC68C2 /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F7687082380D7150023D5D8 /* SimpsonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpsonDetail.swift; sourceTree = "<group>"; };
 		0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE29E86238029FF00BC68C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				0FE29E8A238029FF00BC68C2 /* ContentView.swift */,
 				0FE29EB123808CCB00BC68C2 /* QuotesView.swift */,
+				0F7687082380D7150023D5D8 /* SimpsonDetail.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				0FE29EB02380391B00BC68C2 /* Quote.swift in Sources */,
 				0FE29EAE2380388500BC68C2 /* QuotesDAO.swift in Sources */,
 				0FE29EB6238097CE00BC68C2 /* PortImage.swift in Sources */,
+				0F7687092380D7150023D5D8 /* SimpsonDetail.swift in Sources */,
 				0FE29EBE2380D42800BC68C2 /* SimpsonCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

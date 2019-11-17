@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SimpsonCharacter: Identifiable {
+struct SimpsonCharacter: Hashable, Codable, Identifiable {
     
     var id: String
     var name: String
