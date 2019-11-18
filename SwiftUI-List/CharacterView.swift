@@ -24,18 +24,22 @@ struct CharacterView: View {
                 .frame(width: 350, height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 10)
-            }
                 
+            }
+                Rectangle()
+                .frame(width: 350, height: 30, alignment: .topLeading)
+                .opacity(0.6)
+                .blur(radius: 10)
 
                 HStack{
                     VStack (alignment: .leading){
                         Text("\(simpson.name)"+" ("+"\(simpson.age)"+")")
                             .font(.headline)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.black)
 
                     }
                     .padding(.leading)
-                    .background(Color(.white))
+                    
                     .cornerRadius(10)
                 }
             }
