@@ -6,14 +6,21 @@
 //  Copyright © 2019 nistsugaDev. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 struct SimpsonCharacter: Hashable, Codable, Identifiable {
     
-    var id: String
+    var id: Int
     var name: String
     var age: String
+    var family: Family
+    var shortDescription: String
     var biography: String
     var image: String
     
+    
+    enum Family: String, CaseIterable, Codable, Hashable {
+        case simpson = "Simpsons"
+        case flander = "Flanders"
+    }
 }

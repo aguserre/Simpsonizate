@@ -9,13 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+
     var body: some View {
         NavigationView {
+            
             ZStack{
                 Color.yellow
-                NavigationLink(destination: QuotesView()) {
+                HStack {
+                    NavigationLink(destination: QuotesView()) {
                     Text("quotes")
-                
+                    }
+                    
+                    NavigationLink(destination: SimpsonList()) {
+                    Text("characters")
+                    }
                 }
             }
             .edgesIgnoringSafeArea(.all)
