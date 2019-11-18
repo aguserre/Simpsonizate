@@ -10,19 +10,16 @@ import SwiftUI
 
 struct SimpsonList: View {
     
-    var families: [String:[Character]]{
-        .init(grouping: characterData,
-              by: {$0.family.rawValue})
-    }
+    var families: [Character] = characterData
+    
     
     var body: some View {
-        
-        List(families.keys.sorted(), id: \String.self) { key in
-            CharacterRow(familyName: "\(key) family".uppercased(), characters: self.families[key]!)
-            .frame(height: 320)
-            .padding(.top)
-            .padding(.bottom)
-        }.navigationBarTitle("Characters", displayMode: .inline)
+            List {
+                ForEach(families, id: \.name) { character in
+                    CharacterView(simpson: character)
+                }
+            }
+            .navigationBarTitle(Text("Characters"))
         
     }
 }

@@ -14,35 +14,32 @@ struct CharacterView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 16.0) {
             
-            Image(simpson.image)
+        ZStack(alignment: .topLeading){
+            NavigationLink(destination: CharacterDetailView(character: simpson)){
+                Image(simpson.image)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 300, height: 170)
-                .cornerRadius(10)
+                .frame(width: 350, height: 200)
+                .cornerRadius(20)
                 .shadow(radius: 10)
-            
-            VStack(alignment: .leading, spacing: 5){
-                HStack{
-                    Text(simpson.name)
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                    Text("("+simpson.age+")")
-                        .foregroundColor(.secondary)
-                }
-                Text(simpson.shortDescription)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .frame(height: 40)
             }
-        }
-        
+                
+
+                HStack{
+                    VStack (alignment: .leading){
+                        Text("\(simpson.name)"+" ("+"\(simpson.age)"+")")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+
+                    }
+                    .padding(.leading)
+                    .background(Color(.white))
+                    .cornerRadius(10)
+                }
+            }
     }
-    
 }
 
 struct CharacterView_Previews: PreviewProvider {

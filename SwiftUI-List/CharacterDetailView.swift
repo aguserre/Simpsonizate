@@ -15,6 +15,7 @@ struct CharacterDetailView: View {
     var body: some View {
         List {
             ZStack (alignment: .bottom){
+                
                 Image(character.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -33,25 +34,43 @@ struct CharacterDetailView: View {
                     .padding(.bottom)
                     Spacer()
                 }
-            }
+                }
+            .disabled(true)
             .listRowInsets(EdgeInsets())
-            VStack(alignment: .leading) {
-                Text(character.biography)
-                .foregroundColor(.primary)
-                .font(.body)
-                .lineLimit(nil)
-                .lineSpacing(12)
+            
+            Section(header: Text("Informacion")){
+                
                 
                 HStack {
-                    Spacer()
-                    ViewEpisodeButton()
-                    Spacer()
-                }.padding(.top, 50)
-                
+                    VStack (alignment: .leading){
+                        Text("Age: "+"\(character.age)")
+                        Text("Hobbie: "+"\(character.hobbie)")
+                        Text("Job: "+"\(character.job)")
+
+                    }.padding()
+                    VStack (alignment: .leading){
+                        Text("Birthday: "+"\(character.birthday)")
+                        Text("Childrens: "+"\(character.childrens)")
+                        Text("Dir: "+"\(character.dir)")
+                    }.padding()
+                }
             }
             
+            Section(header: Text("Biografia")){
+                List {
+                    VStack(alignment: .leading) {
+                        Text(character.biography)
+                        .foregroundColor(.primary)
+                        .font(.body)
+                        .lineLimit(nil)
+                        .lineSpacing(5)
+                    }
+                    .disabled(true)
+                }
+                .frame(height: 400)
+            }
         }
-        
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

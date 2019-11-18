@@ -14,8 +14,12 @@ struct Character: Hashable, Codable, Identifiable {
     var name: String
     var age: String
     var family: Family
-    var shortDescription: String
+    var dir: String
     var biography: String
+    var hobbie: String
+    var job: String
+    var birthday: String
+    var childrens: String
     var image: String
     
     
