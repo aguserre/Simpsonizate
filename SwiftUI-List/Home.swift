@@ -27,7 +27,7 @@ struct HomeView: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
-            .navigationBarTitle("Welcome")
+            .navigationBarTitle("")
         }
     }
     
