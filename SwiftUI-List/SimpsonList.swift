@@ -10,8 +10,8 @@ import SwiftUI
 
 struct SimpsonList: View {
     
-    var families: [String:[SimpsonCharacter]]{
-        .init(grouping: simpsonData,
+    var families: [String:[Character]]{
+        .init(grouping: characterData,
               by: {$0.family.rawValue})
     }
     

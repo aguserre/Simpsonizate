@@ -8,7 +8,7 @@
 
 import Foundation
 
-let simpsonData: [SimpsonCharacter] = load("json.json")
+let characterData: [Character] = load("json.json")
 
 func load<T:Decodable>(_ filename:String, as type:T.Type = T.self) -> T {
     let data: Data

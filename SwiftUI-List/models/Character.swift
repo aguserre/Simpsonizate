@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SimpsonCharacter: Hashable, Codable, Identifiable {
+struct Character: Hashable, Codable, Identifiable {
     
     var id: Int
     var name: String

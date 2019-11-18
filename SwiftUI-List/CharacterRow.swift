@@ -11,35 +11,47 @@ import SwiftUI
 struct CharacterRow: View {
     
     var familyName: String
-    var characters: [SimpsonCharacter]
+    var characters: [Character]
     
     var body: some View {
         VStack(alignment: .leading) {
-
-            Text(self.familyName)
+            
+            Text(familyName)
                 .font(.title)
-
-            ScrollView(.horizontal, showsIndicators: true) {
-
+            
+            ScrollView(.horizontal, showsIndicators: false ){
                 HStack(alignment: .top) {
-                    ForEach (characters, id: \.name){ character in
-                        NavigationLink(destination: CharacterDetailView(character: character)) {
-                            HStack{
-                                SimpsonDetailView(simpson: character)
+                    ForEach(characters, id: \.name) { character in
+                            NavigationLink(destination: CharacterDetailView(character: character)) {
+                                CharacterView(simpson: character)
                                 .frame(width: 300)
                                 .padding(.trailing, 30)
-                            }
                         }
+                                
                     }
-                }.navigationBarHidden(true)
+                }
             }
         }
-
+        
+        
+        
+        
+        
+                
+                
+            
+            
+            
+            
+    
+        
     }
+
+    
 }
 
 struct CharacterRow_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterRow(familyName: "SIMPSONS", characters: simpsonData)
+        CharacterRow(familyName: "SIMPSONS", characters: characterData)
     }
 }

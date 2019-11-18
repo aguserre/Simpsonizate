@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     
-    var character: SimpsonCharacter
+    var character: Character
     
     var body: some View {
         List {
@@ -71,6 +71,6 @@ struct ViewEpisodeButton : View {
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailView(character: simpsonData[1])
+        CharacterDetailView(character: characterData[1])
     }
 }
