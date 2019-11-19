@@ -19,29 +19,13 @@ struct QuotesView: View {
         ZStack{
             Color.yellow
             List(service.quotes){ i in
-                cell(quote: i.quote, character: i.character, image: i.image)
+                CellQuote(quote: i.quote, character: i.character, image: i.image)
             }
         }.navigationBarTitle("Quotes", displayMode: .inline)
-
     }
 }
 
-struct cell: View {
-    
-    var quote = ""
-    var character = ""
-    var image = ""
-    
-    var body : some View {
-        HStack {
-            WebImage(url: URL(string: image)).resizable().frame(width: 50, height: 50)
-            VStack (alignment: .leading) {
-                Text(character).font(.headline)
-                Text(quote).font(.subheadline).lineLimit(nil)
-            }
-        }
-    }
-}
+
 
 struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
