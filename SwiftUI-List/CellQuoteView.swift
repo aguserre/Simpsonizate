@@ -17,14 +17,16 @@ struct CellRow: View {
     @ObservedObject var service = QuoteDAO()
         
     var body : some View {
-
+        
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack (alignment: .top){
+            HStack {
                 ForEach(service.quotes, id: \.quote) { quote in
                     CardQuote(quote: quote.quote, character: quote.character, image: quote.image)
                         .padding(.trailing, 30)
+                    }
                 }
-            }.frame(height: UIScreen.main.bounds.height)
+        
+            
         }
     }
 }
@@ -37,22 +39,22 @@ struct CardQuote: View {
     
     var body : some View {
         
-        ZStack (alignment: .leading) {
-            
-            VStack (alignment: .leading, spacing: 20) {
-                Color(red: 247/256, green: 206/256, blue: 70/256)
-                    .cornerRadius(20)
-                    .shadow(radius: 10)
-            }.frame(width: 300, height: 400)
+            ZStack (alignment: .leading) {
+                
+                VStack (alignment: .leading, spacing: 20) {
+                    Color(red: 247/256, green: 206/256, blue: 70/256)
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                }.frame(width: 300, height: 400)
 
-            
-            VStack(alignment: .leading) {
-                WebImage(url: URL(string: image))
-                .resizable()
-            }.frame(width: 300, height: 400)
-            
-        }.frame(height: UIScreen.main.bounds.height)
-            
+                
+                VStack(alignment: .leading) {
+                    WebImage(url: URL(string: image))
+                    .resizable()
+                }.frame(width: 300, height: 400)
+                
+            }.frame(width: 300, height: 425)
+        
     }
     
 }

@@ -19,15 +19,13 @@ struct QuotesView: View {
     var body: some View {
        
         HStack() {
-            
             if service.error == nil {
                 CellRow()
             }else{
                 CellQuoteEmpty(error: service.error!)
             }
         }
-            
-        .offset(y: -200)
+        .offset(y: -145)
         .navigationBarTitle(Text("Quotes"))
     }
 }
