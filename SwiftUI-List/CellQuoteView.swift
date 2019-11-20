@@ -24,8 +24,8 @@ struct CellRow: View {
                     CardQuote(quote: quote.quote, character: quote.character, image: quote.image)
                         .padding(.trailing, 30)
                 }
-            }
-        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            }.frame(height: UIScreen.main.bounds.height)
+        }
     }
 }
 
