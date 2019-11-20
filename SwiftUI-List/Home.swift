@@ -18,17 +18,19 @@ struct HomeView: View {
                 Color.yellow
                 HStack{
                     PortImageView()
-                    .edgesIgnoringSafeArea(.top)
-                    .offset(y: -250)
+                        .edgesIgnoringSafeArea(.top)
+                        .offset(y: -250)
                 }.frame(height: 200)
                     
                 CircularSpringfieldImage()
                     .frame(height: 250)
                     .offset(y: -250)
                     .padding(.bottom, -150)
-                    
+
                 VStack {
+                    
                     ViewEpisodeButton()
+                    
                     HStack {
                         NavigationLink(destination: QuotesView()) {
                             QuoteButtonView()
@@ -37,7 +39,7 @@ struct HomeView: View {
                             CharacterButtonView()
                         }
                     }
-                }.offset(y: 180)
+                }.offset(y: 300)
 
             }
             .edgesIgnoringSafeArea(.all)

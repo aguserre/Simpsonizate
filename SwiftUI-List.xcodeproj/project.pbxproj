@@ -21,6 +21,7 @@
 		0F7D8FA72384EB8F0062B89C /* ImagePortHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */; };
 		0F7D8FA92384ED560062B89C /* QuoteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */; };
 		0F7D8FAB2384ED650062B89C /* CharacterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */; };
+		0F9A9AC5238605ED001C0A61 /* TheSimpsonsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9A9AC4238605ED001C0A61 /* TheSimpsonsImage.swift */; };
 		0FE29E87238029FF00BC68C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E86238029FF00BC68C2 /* AppDelegate.swift */; };
 		0FE29E89238029FF00BC68C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */; };
 		0FE29E8B238029FF00BC68C2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E8A238029FF00BC68C2 /* Home.swift */; };
@@ -54,6 +55,7 @@
 		0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePortHome.swift; sourceTree = "<group>"; };
 		0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteButtonView.swift; sourceTree = "<group>"; };
 		0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterButtonView.swift; sourceTree = "<group>"; };
+		0F9A9AC4238605ED001C0A61 /* TheSimpsonsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheSimpsonsImage.swift; sourceTree = "<group>"; };
 		0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE29E86238029FF00BC68C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */,
 				0F7D8FA42384E8890062B89C /* CircularSpringfieldImage.swift */,
 				0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */,
+				0F9A9AC4238605ED001C0A61 /* TheSimpsonsImage.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				0F7D8F9D2384AE400062B89C /* AVPlayerView.swift in Sources */,
 				0F7D8FA52384E8890062B89C /* CircularSpringfieldImage.swift in Sources */,
 				0F7D8FA92384ED560062B89C /* QuoteButtonView.swift in Sources */,
+				0F9A9AC5238605ED001C0A61 /* TheSimpsonsImage.swift in Sources */,
 				0F7D8FA12384B8500062B89C /* EpisodeButtonView.swift in Sources */,
 				0F7D8F9B2384A6E90062B89C /* PlayerVideoView.swift in Sources */,
 				0FE29EB6238097CE00BC68C2 /* PortDetailImage.swift in Sources */,

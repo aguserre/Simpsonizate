@@ -13,7 +13,7 @@ struct CharacterButtonView : View {
 
         HStack{
             Text("Character")
-                .frame(width: 100, height: 50)
+                .frame(width: 95, height: 50)
                 .foregroundColor(.white)
                 .font(.headline)
                 .background(Color.blue)
