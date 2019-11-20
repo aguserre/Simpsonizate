@@ -38,13 +38,12 @@ struct CharacterDetailView: View {
             .disabled(true)
             .listRowInsets(EdgeInsets())
             
-            Section(header: Text("Informacion")){
-                HStack {
+            Section(header: Text("Informacion").font(.headline)) {
+                HStack(alignment: .center) {
                     VStack (alignment: .leading){
                         Text("Age: "+"\(character.age)")
                         Text("Hobbie: "+"\(character.hobbie)")
                         Text("Job: "+"\(character.job)")
-
                     }.padding()
                     VStack (alignment: .leading){
                         Text("Birthday: "+"\(character.birthday)")
@@ -52,34 +51,34 @@ struct CharacterDetailView: View {
                         Text("Dir: "+"\(character.dir)")
                     }.padding()
                 }
+                .frame(width: 380)
+                .background(Color(red: 247/256, green: 206/256, blue: 70/256))
+                .cornerRadius(25)
+                .shadow(radius: 10)
             }
-            
-            Section(header: Text("Biografia")){
-                List {
-                    VStack(alignment: .leading) {
-                        Text(character.biography)
+            .listRowBackground(Color(.clear))
+            Section(header: Text("Biografia").font(.headline)) {
+                
+                VStack {
+                    Text(character.biography)
                         .foregroundColor(.primary)
                         .font(.body)
                         .lineLimit(nil)
                         .lineSpacing(5)
-                    }
-                    .disabled(true)
+                        .padding()
+                       
+                        .background(Color(red: 247/256, green: 206/256, blue: 70/256))
                 }
-                .frame(height: 400)
+                .cornerRadius(25)
+                .shadow(radius: 10)
             }
-            Section() {
-                HStack {
-                    
-                    ViewEpisodeButton()
-                    
-                }.frame(width: 380, height: 50, alignment: .center)
-            }
+            .listRowBackground(Color(.clear))
         }
-        .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailView(character: characterData[1])
+        CharacterDetailView(character: characterData[0])
     }
 }

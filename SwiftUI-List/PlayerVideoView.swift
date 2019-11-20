@@ -11,14 +11,14 @@ import AVKit
 
 struct PlayerVideoView: View {
     var body: some View {
-        
-        VStack{
-            
-            player().frame(height: UIScreen.main.bounds.height / 3)
-            Spacer()
-            
-        }
-        
+        ZStack {
+            Color.yellow
+            VStack{
+                player().frame(height: UIScreen.main.bounds.height / 3)
+                Spacer()
+            }
+        }.edgesIgnoringSafeArea(.all)
+
     }
 }
 

@@ -17,6 +17,10 @@
 		0F7D8F9D2384AE400062B89C /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8F9C2384AE400062B89C /* AVPlayerView.swift */; };
 		0F7D8F9F2384B81A0062B89C /* ModalVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8F9E2384B81A0062B89C /* ModalVideoView.swift */; };
 		0F7D8FA12384B8500062B89C /* EpisodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA02384B8500062B89C /* EpisodeButtonView.swift */; };
+		0F7D8FA52384E8890062B89C /* CircularSpringfieldImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA42384E8890062B89C /* CircularSpringfieldImage.swift */; };
+		0F7D8FA72384EB8F0062B89C /* ImagePortHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */; };
+		0F7D8FA92384ED560062B89C /* QuoteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */; };
+		0F7D8FAB2384ED650062B89C /* CharacterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */; };
 		0FE29E87238029FF00BC68C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E86238029FF00BC68C2 /* AppDelegate.swift */; };
 		0FE29E89238029FF00BC68C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */; };
 		0FE29E8B238029FF00BC68C2 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE29E8A238029FF00BC68C2 /* Home.swift */; };
@@ -46,6 +50,10 @@
 		0F7D8F9C2384AE400062B89C /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		0F7D8F9E2384B81A0062B89C /* ModalVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVideoView.swift; sourceTree = "<group>"; };
 		0F7D8FA02384B8500062B89C /* EpisodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeButtonView.swift; sourceTree = "<group>"; };
+		0F7D8FA42384E8890062B89C /* CircularSpringfieldImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSpringfieldImage.swift; sourceTree = "<group>"; };
+		0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePortHome.swift; sourceTree = "<group>"; };
+		0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteButtonView.swift; sourceTree = "<group>"; };
+		0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterButtonView.swift; sourceTree = "<group>"; };
 		0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE29E86238029FF00BC68C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +153,10 @@
 				0F7D8F9C2384AE400062B89C /* AVPlayerView.swift */,
 				0F7D8F9E2384B81A0062B89C /* ModalVideoView.swift */,
 				0F7D8FA02384B8500062B89C /* EpisodeButtonView.swift */,
+				0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */,
+				0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */,
+				0F7D8FA42384E8890062B89C /* CircularSpringfieldImage.swift */,
+				0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -266,6 +278,7 @@
 				0FE29EC12380D4AC00BC68C2 /* DataService.swift in Sources */,
 				0F7D8F9523836A030062B89C /* CellQuoteView.swift in Sources */,
 				0F76870F238170910023D5D8 /* SimpsonList.swift in Sources */,
+				0F7D8FA72384EB8F0062B89C /* ImagePortHome.swift in Sources */,
 				0F768711238175190023D5D8 /* CharacterDetailView.swift in Sources */,
 				0FE29EB223808CCB00BC68C2 /* QuotesView.swift in Sources */,
 				0F7D8F9923836E220062B89C /* Video.swift in Sources */,
@@ -274,9 +287,12 @@
 				0FE29E8B238029FF00BC68C2 /* Home.swift in Sources */,
 				0FE29EB02380391B00BC68C2 /* Quote.swift in Sources */,
 				0FE29EAE2380388500BC68C2 /* QuotesDAO.swift in Sources */,
+				0F7D8FAB2384ED650062B89C /* CharacterButtonView.swift in Sources */,
 				0F7D8F9F2384B81A0062B89C /* ModalVideoView.swift in Sources */,
 				0F76870B23815E0F0023D5D8 /* CharacterView.swift in Sources */,
 				0F7D8F9D2384AE400062B89C /* AVPlayerView.swift in Sources */,
+				0F7D8FA52384E8890062B89C /* CircularSpringfieldImage.swift in Sources */,
+				0F7D8FA92384ED560062B89C /* QuoteButtonView.swift in Sources */,
 				0F7D8FA12384B8500062B89C /* EpisodeButtonView.swift in Sources */,
 				0F7D8F9B2384A6E90062B89C /* PlayerVideoView.swift in Sources */,
 				0FE29EB6238097CE00BC68C2 /* PortDetailImage.swift in Sources */,

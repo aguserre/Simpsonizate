@@ -16,15 +16,29 @@ struct HomeView: View {
             
             ZStack{
                 Color.yellow
-                HStack {
-                    NavigationLink(destination: QuotesView()) {
-                    Text("quotes")
-                    }
+                HStack{
+                    PortImageView()
+                    .edgesIgnoringSafeArea(.top)
+                    .offset(y: -250)
+                }.frame(height: 200)
                     
-                    NavigationLink(destination: SimpsonList()) {
-                    Text("characters")
+                CircularSpringfieldImage()
+                    .frame(height: 250)
+                    .offset(y: -250)
+                    .padding(.bottom, -150)
+                    
+                VStack {
+                    ViewEpisodeButton()
+                    HStack {
+                        NavigationLink(destination: QuotesView()) {
+                            QuoteButtonView()
+                        }
+                        NavigationLink(destination: SimpsonList()) {
+                            CharacterButtonView()
+                        }
                     }
-                }
+                }.offset(y: 180)
+
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("")
