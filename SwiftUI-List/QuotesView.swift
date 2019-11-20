@@ -16,16 +16,19 @@ struct QuotesView: View {
     @ObservedObject var service = QuoteDAO()
     
     var body: some View {
-        ZStack{
-            Color.yellow
-            List(service.quotes){ i in
-                CellQuote(quote: i.quote, character: i.character, image: i.image)
+        VStack{
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack{
+                    ForEach(service.quotes, id: \.id) { quote in
+                        CellQuote(quote: quote.quote, character: quote.character, image: quote.image)
+                        .frame(width: 300,height: 300)
+                        .padding(.trailing, 30)
+                    }
+                }
             }
-        }   .background(Color(.white))
-            .navigationBarTitle(Text("Quotes"))
+        }
     }
 }
-
 
 
 struct QuotesView_Previews: PreviewProvider {
