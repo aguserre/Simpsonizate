@@ -13,23 +13,28 @@ import SwiftyJSON
 class QuoteDAO: ObservableObject {
     
     @Published var quotes = [Quotes]()
+    @Published var error: String?
+    var i: Int = 0
     init() {
         
-        Alamofire.request("https://thesimpsonsquoteapi.glitch.me/quotes?count=20").responseData { (data) in
+        Alamofire.request("https://thesimpsonsquoteapi.glitch.me/quotes?count=10").responseJSON { (response) in
             
-            let json = try! JSON(data: data.data!)
-            
-            for i in json {
-                //i.0 devuelve la posicion de los elementos que hay en en array
-                //i.1 devuelve el contenido en formato JSON de cada elemento del array
-                //print(i.1)
-                self.quotes.append(Quotes(id: i.0,
-                                          quote: i.1["quote"].stringValue ,
-                                          character: i.1["character"].stringValue,
-                                          image: i.1["image"].stringValue,
-                                          characterDirection: i.1["characterDirection"].stringValue))
-
+                if let rootDictionary = response.value as? [[String:AnyObject]] {
+                    for aDictionary in rootDictionary {
+                        let quoteObject = Quotes(dictionary: aDictionary)
+                        
+                        //utilizo este if para agregar 5 objetos en cada array, y asi mostrar dos filas en la QuotesView
+                            self.quotes.append(quoteObject)
+                    }
+                    
+                } else {
+                    if let data = response.data {
+                        if let json = String(data: data, encoding: String.Encoding.utf8){
+                            self.error = json
+                            print("Failure response: \(String(describing: json))")
+                        }
+                    }
+                }
             }
-        }
     }
 }

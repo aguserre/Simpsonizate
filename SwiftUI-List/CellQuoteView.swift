@@ -11,7 +11,25 @@ import SDWebImageSwiftUI
 import Alamofire
 import SwiftyJSON
 
-struct CellQuote: View {
+
+struct CellRow: View {
+
+    @ObservedObject var service = QuoteDAO()
+        
+    var body : some View {
+
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack (alignment: .top){
+                ForEach(service.quotes, id: \.quote) { quote in
+                    CardQuote(quote: quote.quote, character: quote.character, image: quote.image)
+                        .padding(.trailing, 30)
+                }
+            }
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+    }
+}
+
+struct CardQuote: View {
     
     var quote = ""
     var character = ""
@@ -19,34 +37,51 @@ struct CellQuote: View {
     
     var body : some View {
         
-        VStack {
-            ZStack(alignment: .bottomLeading) {
-                WebImage(url: URL(string: image))
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 400, height: 380)
-                .cornerRadius(20)
-                .shadow(radius: 10)
-                
-                HStack {
-                    Text(character).font(.largeTitle)
-                }.frame(width: 400, height: 60, alignment: .leading)
+        ZStack (alignment: .leading) {
+            
+            VStack (alignment: .leading, spacing: 20) {
+                Color(red: 247/256, green: 206/256, blue: 70/256)
+                    .cornerRadius(20)
+                    .shadow(radius: 10)
+            }.frame(width: 300, height: 400)
 
             
-            }
-            HStack{
-                Text(quote).font(.subheadline)
-                .lineLimit(10)
+            VStack(alignment: .leading) {
+                WebImage(url: URL(string: image))
+                .resizable()
+            }.frame(width: 300, height: 400)
+            
+        }.frame(height: UIScreen.main.bounds.height)
+            
+    }
+    
+}
+
+struct CellQuoteEmpty: View {
+    
+    var error = ""
+
+    var body : some View {
+        ZStack {
+            
+            HStack(alignment: .center) {
+                Color(red: 247/256, green: 206/256, blue: 70/256)
+                    .cornerRadius(20)
+                    .shadow(radius: 10)
                 
-
-            }
+            }.frame(width: 300)
+            HStack {
+                Text(error).font(.subheadline)
+            }.frame(width: 280, height: 200)
         }
-
-        
+        .frame(width: UIScreen.main.bounds.width, height: 200)
     }
 }
-struct CellQuote_Previews: PreviewProvider {
+
+
+struct CellRow_Previews: PreviewProvider {
     static var previews: some View {
-        CellQuote(quote: characterData[0].biography, character: characterData[0].name, image: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FComicBookGuy.png?1497567511970")
+        HomeView()
     }
 }
 
