@@ -21,7 +21,8 @@ struct QuotesView: View {
             List(service.quotes){ i in
                 CellQuote(quote: i.quote, character: i.character, image: i.image)
             }
-        }.navigationBarTitle("Quotes", displayMode: .inline)
+        }   .background(Color(.white))
+            .navigationBarTitle(Text("Quotes"))
     }
 }
 

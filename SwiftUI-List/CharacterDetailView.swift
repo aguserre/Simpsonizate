@@ -39,8 +39,6 @@ struct CharacterDetailView: View {
             .listRowInsets(EdgeInsets())
             
             Section(header: Text("Informacion")){
-                
-                
                 HStack {
                     VStack (alignment: .leading){
                         Text("Age: "+"\(character.age)")
@@ -69,25 +67,17 @@ struct CharacterDetailView: View {
                 }
                 .frame(height: 400)
             }
+            Section() {
+                HStack {
+                    
+                    ViewEpisodeButton()
+                    
+                }.frame(width: 380, height: 50, alignment: .center)
+            }
         }
         .edgesIgnoringSafeArea(.top)
     }
 }
-
-struct ViewEpisodeButton : View {
-    var body : some View {
-        NavigationLink(destination: QuotesView()) {
-            Text("Go Episode")
-            
-        }
-        .frame(width: 200, height: 50)
-        .foregroundColor(.white)
-        .font(.headline)
-        .background(Color.blue)
-        .cornerRadius(10)
-    }
-}
-
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterDetailView(character: characterData[1])

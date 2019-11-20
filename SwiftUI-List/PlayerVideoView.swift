@@ -28,19 +28,4 @@ struct PlayerVideoView_Previews: PreviewProvider {
     }
 }
 
-struct player: UIViewControllerRepresentable {
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<player>) -> AVPlayerViewController {
-        let controller = AVPlayerViewController()
-        let url = "https://youtu.be/wbFuAs_UNYg"
-        let player1 = AVPlayer(url: URL(string: url)!)
-        controller.player = player1
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<player>) {
-        print("")
-    }
-    
-    
-}
+

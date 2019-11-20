@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct PortImage: View {
+struct PortDetailImage: View {
     var body: some View {
         VStack{
             Image("portadaSimpsons")
@@ -17,9 +17,6 @@ struct PortImage: View {
                .scaledToFill()
                .frame(height: 250)
                .edgesIgnoringSafeArea(.top)
-            
         }
-            
     }
-    
 }
