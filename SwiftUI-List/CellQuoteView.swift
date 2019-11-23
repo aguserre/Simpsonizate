@@ -11,53 +11,69 @@ import SDWebImageSwiftUI
 import Alamofire
 import SwiftyJSON
 
-
-struct CellRow: View {
-
-    @ObservedObject var service = QuoteDAO()
-        
-    var body : some View {
-        
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(service.quotes, id: \.quote) { quote in
-                    CardQuote(quote: quote.quote, character: quote.character, image: quote.image)
-                        .padding(.trailing, 30)
-                    }
-                }
-        
-            
-        }
-    }
-}
-
 struct CardQuote: View {
     
+    var nameAPI = ""
+    var nameUser: [String]  {
+        nameAPI.components(separatedBy: " ")}
     var quote = ""
-    var character = ""
     var image = ""
-    
     var body : some View {
         
-            ZStack (alignment: .leading) {
-                
-                VStack (alignment: .leading, spacing: 20) {
-                    Color(red: 247/256, green: 206/256, blue: 70/256)
-                        .cornerRadius(20)
-                        .shadow(radius: 10)
-                }.frame(width: 300, height: 400)
+        HStack(alignment: .top) {
+            AnimatedImage(url: URL(string: image)!)
+                .resizable()
+                .frame(width:50, height: 50)
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .top) {
+                        HStack(alignment: .top){
+                        Text(nameUser[0]).fontWeight(.heavy).font(.system(size: 18))
+                            imageCheckAccount()
+                        }
+                        
+                        Text(nameFormater(nameCompleteWithSpaces: nameAPI))
+                            .font(.system(size: 15))
+                            .fontWeight(.light)
 
-                
-                VStack(alignment: .leading) {
-                    WebImage(url: URL(string: image))
-                    .resizable()
-                }.frame(width: 300, height: 400)
-                
-            }.frame(width: 300, height: 425)
-        
+                    }
+                Text(quote).fontWeight(.light)
+                .font(.system(size: 16))
+
+            }
+        }
+        .padding(.top, 15)
+        .padding(.bottom, 15)
     }
-    
 }
+
+
+func nameFormater(nameCompleteWithSpaces: String)-> String {
+    let names: [String]?
+    names = nameCompleteWithSpaces.components(separatedBy: " ")
+    var finalName: String = ""
+
+    if let namesArray = names {
+        for name in namesArray {
+            finalName += name
+        }
+    } else {
+        finalName = "unknowuser"
+    }
+    return "@"+finalName.lowercased()
+}
+
+struct imageCheckAccount: View {
+    var body : some View {
+
+        Image("twCheck")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 15, height: 15)
+    }
+}
+
 
 struct CellQuoteEmpty: View {
     
@@ -81,9 +97,9 @@ struct CellQuoteEmpty: View {
 }
 
 
-struct CellRow_Previews: PreviewProvider {
+struct CardQuote_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        CardQuote()
     }
 }
 

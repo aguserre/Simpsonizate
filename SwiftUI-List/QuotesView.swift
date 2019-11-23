@@ -18,15 +18,9 @@ struct QuotesView: View {
     
     var body: some View {
        
-        HStack() {
-            if service.error == nil {
-                CellRow()
-            }else{
-                CellQuoteEmpty(error: service.error!)
-            }
-        }
-        .offset(y: -145)
-        .navigationBarTitle(Text("Quotes"))
+        List(service.quotes, id: \.quote) { item in
+            CardQuote(nameAPI: item.character, quote: item.quote, image: item.image)
+        }.navigationBarTitle(Text("Twittson"))
     }
 }
 
