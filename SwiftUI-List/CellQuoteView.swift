@@ -23,8 +23,11 @@ struct CardQuote: View {
         HStack(alignment: .top) {
             AnimatedImage(url: URL(string: image)!)
                 .resizable()
+                .background(Color(.cyan))
                 .frame(width:50, height: 50)
                 .clipShape(Circle())
+                .overlay(Circle().stroke(Color(.gray), lineWidth: 0.5))
+                .shadow(color: .gray,radius: 5)
             
             VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .top) {
@@ -32,19 +35,15 @@ struct CardQuote: View {
                         Text(nameUser[0]).fontWeight(.heavy).font(.system(size: 18))
                             imageCheckAccount()
                         }
-                        
                         Text(nameFormater(nameCompleteWithSpaces: nameAPI))
                             .font(.system(size: 15))
                             .fontWeight(.light)
-
                     }
                 Text(quote).fontWeight(.light)
                 .font(.system(size: 16))
-
             }
         }
-        .padding(.top, 15)
-        .padding(.bottom, 15)
+        
     }
 }
 
