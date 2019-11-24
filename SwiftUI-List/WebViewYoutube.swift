@@ -23,7 +23,6 @@ struct WebView: UIViewRepresentable {
         webViewConfiguration.allowsInlineMediaPlayback = true
         
         let webView = WKWebView(frame: .zero,configuration: webViewConfiguration)
-        webView.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:1)
         
         webView.load(URLRequest(url: urlString!))
         

@@ -16,7 +16,7 @@ struct PlayerVideoView: View {
             VStack{
                 WebView(url: "VHdcG40mt2w")
 
-                    .frame(width: 400, height: 240, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.width-10, height: 220, alignment: .center)
                     .cornerRadius(10)
                     .shadow(radius: 10)
                 
