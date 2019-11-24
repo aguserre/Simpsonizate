@@ -54,7 +54,7 @@
 		0F7D8FA62384EB8F0062B89C /* ImagePortHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePortHome.swift; sourceTree = "<group>"; };
 		0F7D8FA82384ED560062B89C /* QuoteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteButtonView.swift; sourceTree = "<group>"; };
 		0F7D8FAA2384ED650062B89C /* CharacterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterButtonView.swift; sourceTree = "<group>"; };
-		0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE29E83238029FF00BC68C2 /* Simpsonizate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simpsonizate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FE29E86238029FF00BC68C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0FE29E8A238029FF00BC68C2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		0FE29E84238029FF00BC68C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */,
+				0FE29E83238029FF00BC68C2 /* Simpsonizate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,9 +110,6 @@
 				0FE29EAC2380386F00BC68C2 /* models */,
 				0FE29EBF2380D49700BC68C2 /* service */,
 				0FE29EAB2380386200BC68C2 /* dao */,
-				0FE29E9423802A0000BC68C2 /* Info.plist */,
-				0FE29EBB2380A83F00BC68C2 /* characters.json */,
-				0F7D8F9623836CC70062B89C /* videoList.json */,
 				0FE29E8E23802A0000BC68C2 /* Preview Content */,
 			);
 			path = "SwiftUI-List";
@@ -164,6 +161,9 @@
 		0FE29EB42380974C00BC68C2 /* resourses */ = {
 			isa = PBXGroup;
 			children = (
+				0F7D8F9623836CC70062B89C /* videoList.json */,
+				0FE29EBB2380A83F00BC68C2 /* characters.json */,
+				0FE29E9423802A0000BC68C2 /* Info.plist */,
 				0FE29E8C23802A0000BC68C2 /* Assets.xcassets */,
 				0FE29E86238029FF00BC68C2 /* AppDelegate.swift */,
 				0FE29E88238029FF00BC68C2 /* SceneDelegate.swift */,
@@ -214,7 +214,7 @@
 				0FE29EA72380379300BC68C2 /* SDWebImageSwiftUI */,
 			);
 			productName = "SwiftUI-List";
-			productReference = 0FE29E83238029FF00BC68C2 /* SwiftUI-List.app */;
+			productReference = 0FE29E83238029FF00BC68C2 /* Simpsonizate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -436,13 +436,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-List/Preview Content\"";
 				DEVELOPMENT_TEAM = QT76JFT465;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-List/Info.plist";
+				INFOPLIST_FILE = "SwiftUI-List/resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nitsuga.dev.SwiftUI-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Simpsonizate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,13 +456,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-List/Preview Content\"";
 				DEVELOPMENT_TEAM = QT76JFT465;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SwiftUI-List/Info.plist";
+				INFOPLIST_FILE = "SwiftUI-List/resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nitsuga.dev.SwiftUI-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Simpsonizate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
