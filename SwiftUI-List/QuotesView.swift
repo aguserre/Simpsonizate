@@ -15,17 +15,10 @@ import SwiftyJSON
 struct QuotesView: View {
     
     @ObservedObject var service = QuoteDAO()
-    @ObservedObject var service2 = QuoteDAO()
-    
-    var quotes: [Quotes] {
-        service.quotes + service2.quotes
-    }
-    
-    
-    
+
     var body: some View {
        
-        List(quotes, id: \.quote) { item in
+        List(service.quotes, id: \.quote) { item in
             ZStack(alignment: .leading){
                 Rectangle()
                     .foregroundColor(Color(red: 247/256, green: 206/256, blue: 70/256))

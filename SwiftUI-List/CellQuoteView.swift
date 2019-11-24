@@ -21,14 +21,7 @@ struct CardQuote: View {
     var body : some View {
         
         HStack(alignment: .top) {
-            AnimatedImage(url: URL(string: image)!)
-                .resizable()
-                .background(Color(.cyan))
-                .frame(width:50, height: 50)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color(.gray), lineWidth: 0.5))
-                .shadow(color: .gray,radius: 5)
-            
+            imageUrl(image: image)
             VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .top) {
                         HStack(alignment: .top){
@@ -61,6 +54,19 @@ func nameFormater(nameCompleteWithSpaces: String)-> String {
         finalName = "unknowuser"
     }
     return "@"+finalName.lowercased()
+}
+
+struct imageUrl: View {
+    var image: String
+    var body: some View {
+        AnimatedImage(url: URL(string: image)!)
+        .resizable()
+        .background(Color(.cyan))
+        .frame(width:50, height: 50)
+        .clipShape(Circle())
+        .overlay(Circle().stroke(Color(.gray), lineWidth: 0.5))
+        .shadow(color: .gray,radius: 5)
+    }
 }
 
 struct imageCheckAccount: View {
