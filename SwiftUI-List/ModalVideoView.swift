@@ -11,7 +11,7 @@ import SwiftUI
 struct ModalVideo: View {
     
     @Binding var isPresented: Bool
-    
+
     var body: some View {
         PlayerVideoView()
     }
