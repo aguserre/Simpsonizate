@@ -77,8 +77,4 @@ struct CharacterDetailView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-struct CharacterDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailView(character: characterData[0])
-    }
-}
+

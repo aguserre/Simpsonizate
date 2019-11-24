@@ -8,8 +8,6 @@
 
 import Foundation
 
-let characterData: [Character] = load("characters.json")
-let videoData: [Video] = load("videoList.json")
 
 func load<T:Decodable>(_ filename:String, as type:T.Type = T.self) -> T {
     let data: Data

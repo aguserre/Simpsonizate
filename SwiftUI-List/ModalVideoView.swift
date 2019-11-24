@@ -10,9 +10,14 @@ import SwiftUI
 
 struct ModalVideo: View {
     
+    let videos: [Video] = load("videoList.json")
     @Binding var isPresented: Bool
-
+    
     var body: some View {
-        PlayerVideoView()
+        
+        PlayerVideoView(videoID: videos[Int.random(in: 0..<videos.count)].videoId)
+        
     }
 }
+
+

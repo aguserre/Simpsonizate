@@ -10,8 +10,7 @@ import SwiftUI
 
 struct SimpsonList: View {
     
-    var families: [Character] = characterData
-    
+    let families: [Character] = load("characters.json")
     
     var body: some View {
             List {
@@ -20,7 +19,6 @@ struct SimpsonList: View {
                 }
             }
             .navigationBarTitle(Text("Characters"))
-        
     }
 }
 

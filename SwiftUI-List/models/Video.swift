@@ -11,13 +11,6 @@ import SwiftUI
 struct Video: Hashable, Codable, Identifiable {
     
     var id: Int
-    var temporada: String
-    var links: String
+    var videoId: String
 
-    
-    
-    enum Family: String, CaseIterable, Codable, Hashable {
-        case simpson = "Simpsons"
-        case flander = "Flanders"
-    }
 }

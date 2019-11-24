@@ -6,7 +6,6 @@
 //  Copyright © 2019 nistsugaDev. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 import WebKit
 
@@ -14,7 +13,6 @@ import WebKit
 struct WebView: UIViewRepresentable {
 
     var url: String
-    var fjsa:CGFloat = 1
     
     func makeUIView(context: Context) -> WKWebView {
         let urlString = URL(string: "https://www.youtube.com/embed/\(url)")
@@ -23,20 +21,16 @@ struct WebView: UIViewRepresentable {
         webViewConfiguration.allowsInlineMediaPlayback = true
         
         let webView = WKWebView(frame: .zero,configuration: webViewConfiguration)
-        
+        webView.allowsBackForwardNavigationGestures = true
         webView.load(URLRequest(url: urlString!))
-        
         
         return webView
     }
     
     func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {
-        
-    }
-    
-    
-    func loadUrl () {
-        
+        print("dsajsdhaiowqorqkjnrqkwnrqkw")
     }
     
 }
+
+
