@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Lottie
+
 
 struct HomeView: View {
     

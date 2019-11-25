@@ -11,6 +11,7 @@ import SwiftUI
 struct ViewEpisodeButton : View {
     
     @State var isPresentingAddModal = false
+
     
     var body : some View {
         Button(
@@ -38,9 +39,11 @@ struct ViewEpisodeButton : View {
                 }
         })
         .sheet(isPresented: $isPresentingAddModal, content: {
-            ModalVideo(isPresented: self.$isPresentingAddModal)
+                ModalVideo(isPresented: self.$isPresentingAddModal)
         })
+
     }
+        
 }
 
 struct ViewEpisodeButton_Previews: PreviewProvider {

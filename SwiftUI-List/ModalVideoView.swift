@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Lottie
+
 
 struct ModalVideo: View {
     
@@ -15,7 +17,9 @@ struct ModalVideo: View {
     
     var body: some View {
         
+        
         PlayerVideoView(videoID: videos[Int.random(in: 0..<videos.count)].videoId)
+        
         
     }
 }
