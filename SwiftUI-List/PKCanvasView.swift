@@ -12,25 +12,29 @@ import PencilKit
 
 struct PKCanvasRepresentation: UIViewRepresentable {
     
-    @Binding var lineWidth: Double
-    @Binding var ruleActive: Bool
+    @Binding var toolsActive: Bool
+    
     
     func makeUIView(context: Context) -> PKCanvasView {
         let canvas = PKCanvasView()
-        canvas.tool = PKInkingTool(.pencil, color: .black, width: CGFloat(lineWidth))
-        canvas.isRulerActive = ruleActive
+        canvas.tool = PKInkingTool(.pencil, color: .black, width: 1)
         canvas.allowsFingerDrawing = true
-        
+    
         return canvas
     }
     
     func updateUIView(_ uiView: PKCanvasView, context: UIViewRepresentableContext<PKCanvasRepresentation>) {
-        print(lineWidth)
-        uiView.isRulerActive = ruleActive
-        uiView.tool = PKInkingTool(.pencil, color: .black, width: CGFloat(lineWidth))
         
+        if let window = UIApplication.shared.windows.last, let toolPicker = PKToolPicker.shared(for: window) {
+          toolPicker.setVisible(toolsActive, forFirstResponder: uiView)
+          toolPicker.addObserver(uiView)
+          uiView.becomeFirstResponder()
+        }
     }
 
+    
 }
+
+    
 
 

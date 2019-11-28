@@ -21,24 +21,17 @@ struct QuotesView: View {
     
     var body: some View {
         ZStack{
-            LoadingView(isShowing: true) {
-                
-                List(self.service.quotes, id: \.quote) { item in
-                    ZStack(alignment: .leading){
-                        Rectangle()
-                            .foregroundColor(Color(red: 247/256, green: 206/256, blue: 70/256))
-                            .cornerRadius(10)
-                            .shadow(color: .gray,radius: 5)
+          List(self.service.quotes, id: \.quote) { item in
+            ZStack(alignment: .leading){
+                Rectangle()
+                    .foregroundColor(Color(red: 247/256, green: 206/256, blue: 70/256))
+                    .cornerRadius(10)
+                    .shadow(color: .gray,radius: 5)
                         
-                        CardQuote(nameAPI: item.character, quote: item.quote, image: item.image)
-                    }.padding(.all, 5)
-                
-                
-                }
-                
-            .navigationBarTitle(Text("Twittson"))
-            }
-    }
+                CardQuote(nameAPI: item.character, quote: item.quote, image: item.image)
+            }.padding(.all, 5)
+          }.navigationBarTitle(Text("Twittson"))
+        }
     }
 }
 

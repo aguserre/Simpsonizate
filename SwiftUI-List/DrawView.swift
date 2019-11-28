@@ -13,10 +13,19 @@ import PencilKit
 struct DrawView: View {
     
     @State var lineWidth: Double = 1
-    @State var ruleActive: Bool = false
+    @State var toolPikerActive: Bool = false
+    
     @State var colorRed: String = ""
     @State var colorBlue: String = ""
     @State var colorGreen: String = ""
+    var stringImageName : String {
+        if toolPikerActive{
+            return "donutFull"
+        } else {
+            return "donutNotFull"
+        }
+    }
+    
     var colorRedD : Double {
         stringToDouble(string: colorRed)
     }
@@ -33,55 +42,22 @@ struct DrawView: View {
             
             Color.yellow
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                PKCanvasRepresentation(lineWidth: $lineWidth, ruleActive: $ruleActive)
+            PKCanvasRepresentation(toolsActive: $toolPikerActive)
                 
-                HStack {
-                    VStack(alignment: .leading){
-                            HStack{
-                                Text("Color")
-                                Color(red: colorRedD, green: colorGreenD, blue: colorBlueD)
-                                    .frame(width: 10, height: 10, alignment: .leading)
-                            }
-                        
-                            HStack{
-                                Text("Red")
-                                TextField("", text: $colorRed)
-                                    .background(Color.white)
-                                    .frame(width: 40)
-                            }
-                            HStack{
-                                Text("Blue")
-                                TextField("", text: $colorBlue)
-                                    .background(Color.white)
-                                    .frame(width: 40)
-
-                            }
-                            HStack{
-                                Text("Green")
-                                TextField("", text: $colorGreen)
-                                    .background(Color.white)
-                                    .frame(width: 40)
-
-                            }
-                        
-                        }
-                    
-                        VStack{
-                            Button("Rule") {
-                                self.ruleActive.toggle()
-                            }
-                        }
-                    
-                    VStack {
-                        Text("Line width")
-                        Slider(value: $lineWidth, in: 0...30, step: 0.1)
-                    }.frame(width: 100)
-                }
-            }
         }
         .navigationBarTitle("Draw zone")
-            
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.toolPikerActive.toggle()
+            }){
+                VStack{
+                Image(stringImageName)
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                }.frame(width: 35, height: 35)
+            }
+        )
             
     }
 
@@ -95,4 +71,11 @@ func stringToDouble(string: String?) -> Double {
         double = Double(stringA)
     }
     return double ?? 0.0
+}
+
+
+struct DrawViewView_Previews: PreviewProvider {
+    static var previews: some View {
+        DrawView()
+    }
 }
