@@ -13,11 +13,12 @@ import PencilKit
 struct PKCanvasRepresentation: UIViewRepresentable {
     
     @Binding var toolsActive: Bool
-    
+    @Binding var darkMode: Bool
     
     func makeUIView(context: Context) -> PKCanvasView {
         let canvas = PKCanvasView()
         canvas.tool = PKInkingTool(.pencil, color: .black, width: 1)
+        canvas.backgroundColor = .white
         canvas.allowsFingerDrawing = true
     
         return canvas
@@ -30,9 +31,13 @@ struct PKCanvasRepresentation: UIViewRepresentable {
           toolPicker.addObserver(uiView)
           uiView.becomeFirstResponder()
         }
+        
+        if darkMode {
+            uiView.backgroundColor = .black
+        } else {
+            uiView.backgroundColor = .white
+        }
     }
-
-    
 }
 
     

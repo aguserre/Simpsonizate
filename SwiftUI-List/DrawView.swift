@@ -14,10 +14,20 @@ struct DrawView: View {
     
     @State var lineWidth: Double = 1
     @State var toolPikerActive: Bool = false
+    @State var darkMode: Bool = false
     
     @State var colorRed: String = ""
     @State var colorBlue: String = ""
     @State var colorGreen: String = ""
+    
+    var darkModeImageName : String {
+        if darkMode{
+            return "whiteSquare"
+        } else {
+            return "blackSquare"
+        }
+    }
+    
     var stringImageName : String {
         if toolPikerActive{
             return "donutFull"
@@ -42,21 +52,40 @@ struct DrawView: View {
             
             Color.yellow
                 .edgesIgnoringSafeArea(.all)
-            PKCanvasRepresentation(toolsActive: $toolPikerActive)
+            PKCanvasRepresentation(toolsActive: $toolPikerActive, darkMode: $darkMode)
+            .cornerRadius(10)
+            .shadow(radius: 10)
                 
         }
         .navigationBarTitle("Draw zone")
         .navigationBarItems(trailing:
-            Button(action: {
-                self.toolPikerActive.toggle()
-            }){
-                VStack{
-                Image(stringImageName)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                }.frame(width: 35, height: 35)
+            HStack {
+                Button(action: {
+                    self.darkMode.toggle()
+                }){
+                    HStack{
+                        Image(darkModeImageName)
+                            .resizable()
+                            .renderingMode(.original)
+                            .aspectRatio(contentMode: .fill)
+                            .cornerRadius(10)
+                        
+                    }.frame(width: 36, height: 35)
+                }
+            
+                Button(action: {
+                    self.toolPikerActive.toggle()
+                }){
+                    HStack{
+                    Image(stringImageName)
+                        .resizable()
+                        .renderingMode(.original)
+                        .aspectRatio(contentMode: .fill)
+                    }.frame(width: 36, height: 35)
+                }
+            
             }
+            
         )
             
     }
