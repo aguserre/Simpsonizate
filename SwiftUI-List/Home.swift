@@ -11,8 +11,7 @@ import Lottie
 
 
 struct HomeView: View {
-    
-
+        
     var body: some View {
         NavigationView {
             
@@ -30,7 +29,9 @@ struct HomeView: View {
                     .padding(.bottom, -150)
 
                 VStack {
-                    
+                    NavigationLink(destination: DrawView()) {
+                        DrawButton()
+                    }
                     ViewEpisodeButton()
                     
                     HStack {
