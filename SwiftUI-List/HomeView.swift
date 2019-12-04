@@ -11,11 +11,15 @@ import Lottie
 
 
 struct HomeView: View {
-        
+    
+      @State var showSplash = true
+    
     var body: some View {
+        
         NavigationView {
             
             ZStack{
+                
                 Color.yellow
                 HStack{
                     PortImageView()
@@ -43,7 +47,16 @@ struct HomeView: View {
                         }
                     }
                 }.offset(y: 300)
-
+                
+                LaunchScreenCustom()
+                    .opacity(showSplash ? 1 : 0)
+                    .onAppear(){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                          withAnimation() {
+                            self.showSplash = false
+                          }
+                        }
+                }
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("")
