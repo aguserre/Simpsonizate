@@ -254,7 +254,7 @@
 				};
 			};
 			buildConfigurationList = 0FE29E7E238029FF00BC68C2 /* Build configuration list for PBXProject "SwiftUI-List" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -448,6 +448,7 @@
 		0FE29E9823802A0000BC68C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-List/Preview Content\"";
 				DEVELOPMENT_TEAM = QT76JFT465;
@@ -467,6 +468,7 @@
 		0FE29E9923802A0000BC68C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-List/Preview Content\"";
 				DEVELOPMENT_TEAM = QT76JFT465;
