@@ -56,7 +56,7 @@ struct MenuView: View {
             }
         }
         .padding(.vertical, 30)
-        .background(LinearGradient(gradient: Gradient(colors: [.yellow, .purple,  .yellow]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 15))
+        .background(LinearGradient(gradient: Gradient(colors: [.yellow, .purple,  .yellow]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 25))
         .padding(.trailing, 80)
         .offset(x: menuShow ? 0 : -UIScreen.main.bounds.width)
         .animation(.default)

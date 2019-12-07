@@ -32,7 +32,7 @@ struct HomeView: View {
                     VStack{
                         Image("simp")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width, height: 150)
+                        .frame(width: UIScreen.main.bounds.width-10, height: 150)
                             .offset(y: -100)
                         Button(action: {
                             self.menuShow.toggle()
