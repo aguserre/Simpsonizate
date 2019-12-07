@@ -12,7 +12,8 @@ import Lottie
 
 struct HomeView: View {
     
-      @State var showSplash = true
+    @State var showSplash = true
+    @State var menuShow = false
     
     var body: some View {
         
@@ -20,33 +21,38 @@ struct HomeView: View {
             
             ZStack{
                 
-                Color.yellow
-                HStack{
-                    PortImageView()
-                        .edgesIgnoringSafeArea(.top)
-                        .offset(y: -250)
-                }.frame(height: 200)
-                    
-                CircularSpringfieldImage()
-                    .frame(height: 250)
-                    .offset(y: -250)
-                    .padding(.bottom, -150)
+                LinearGradient(gradient: Gradient(colors: [.yellow, .yellow, .gray]), startPoint: .top, endPoint: .bottom)
 
                 VStack {
-                    NavigationLink(destination: DrawView()) {
-                        DrawButton()
-                    }
-                    ViewEpisodeButton()
-                    
-                    HStack {
-                        NavigationLink(destination: QuotesView()) {
-                            QuoteButtonView()
+                    Image("springfield")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    CircularSpringfieldImage()
+                        .offset(y: -100)
+                    VStack{
+                        Image("simp")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width, height: 150)
+                            .offset(y: -100)
+                        Button(action: {
+                            self.menuShow.toggle()
+                        }) {
+                            VStack{
+                            Image("donutFull")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .imageScale(.large)
+                                .foregroundColor(.black)
+                            Text("Menu")
+                                .foregroundColor(.black)
+                                
+                            }
                         }
-                        NavigationLink(destination: SimpsonList()) {
-                            CharacterButtonView()
-                        }
                     }
-                }.offset(y: 300)
+                    Spacer()
+                }
+                MenuView(menuShow: $menuShow)
                 
                 LaunchScreenCustom()
                     .opacity(showSplash ? 1 : 0)
@@ -67,7 +73,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(showSplash: false)
     }
 }
 
