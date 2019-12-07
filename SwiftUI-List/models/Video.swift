@@ -12,5 +12,8 @@ struct Video: Hashable, Codable, Identifiable {
     
     var id: Int
     var videoId: String
+    var title: String
+    var description: String
+    var rate: Int
 
 }

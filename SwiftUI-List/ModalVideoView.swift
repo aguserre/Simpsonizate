@@ -13,15 +13,44 @@ import Lottie
 struct ModalVideo: View {
     
     let videos: [Video] = load("videoList.json")
-    @Binding var isPresented: Bool
+    
+    var randomNum: Int {
+        Int.random(in: 0..<videos.count)
+    }
     
     var body: some View {
         
+        ZStack{
+            Color.yellow
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                
+                Text(videos[randomNum].title)
+                    .font(.title)
+                    .foregroundColor(.black)
+                PlayerVideoView(videoID: videos[randomNum].videoId)
+                    .padding(.bottom, 20)
+                Text("Rated")
+                    .font(.subheadline)
+                    .foregroundColor(.black)
+                HStack{
+                    Text("")
+                }
+                
+                Spacer()
+            }
         
-        PlayerVideoView(videoID: videos[Int.random(in: 0..<videos.count)].videoId)
+        }.navigationBarTitle(Text("Videos"))
         
         
     }
+
+
 }
 
 
+struct ModalVideo_Previews: PreviewProvider {
+    static var previews: some View {
+        ModalVideo()
+    }
+}

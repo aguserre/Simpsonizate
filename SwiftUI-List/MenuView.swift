@@ -48,14 +48,12 @@ struct MenuView: View {
             NavigationLink(destination: QuotesView()) {
                 MenuRowView(rowActive: true, icon: "quote.bubble.fill", text: "Twittson")
             }
-            NavigationLink(destination: ModalVideo(isPresented: $menuShow)) {
+            NavigationLink(destination: ModalVideo()) {
                 MenuRowView(rowActive: true, icon: "video.circle.fill", text: "Random cap")
             }
             NavigationLink(destination: SimpsonList()) {
                 MenuRowView(rowActive: true, icon: "person.crop.circle.fill", text: "Simpsons list")
             }
-            
-            
         }
         .padding(.vertical, 30)
         .background(LinearGradient(gradient: Gradient(colors: [.yellow, .purple,  .yellow]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 15))

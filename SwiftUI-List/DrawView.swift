@@ -83,15 +83,8 @@ struct DrawView: View {
                         .aspectRatio(contentMode: .fill)
                     }.frame(width: 36, height: 35)
                 }
-            
-            }
-            
-        )
-            
+            })
     }
-
-
-    
 }
 
 func stringToDouble(string: String?) -> Double {
