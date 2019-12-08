@@ -11,7 +11,8 @@ import SwiftUI
 struct MenuView: View {
     
     @Binding var menuShow: Bool
-    
+    @EnvironmentObject var session: SessionStore
+
     var body: some View {
         VStack{
             
@@ -30,6 +31,10 @@ struct MenuView: View {
                     .font(.system(size: 20, weight: .semibold))
                     .padding(.top, 10)
                     .padding(.bottom, 40)
+                    
+                    Button(action: session.signOut){
+                        Text("Sign out")
+                    }
                 }
             }
             .padding(.top, 20)

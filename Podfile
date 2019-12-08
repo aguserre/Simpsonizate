@@ -6,5 +6,6 @@ target 'SwiftUI-List' do
   use_frameworks!
 
   # Pods for SwiftUI-List
-
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Auth'
 end
