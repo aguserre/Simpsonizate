@@ -191,7 +191,6 @@
 		0FE29EB42380974C00BC68C2 /* resourses */ = {
 			isa = PBXGroup;
 			children = (
-				0FFF45C3239DB94100327FA4 /* Plist */,
 				0FFF45C2239DB92F00327FA4 /* Jsons */,
 				0FE29E8C23802A0000BC68C2 /* Assets.xcassets */,
 				0FE29E86238029FF00BC68C2 /* AppDelegate.swift */,
@@ -228,20 +227,13 @@
 		0FFF45C2239DB92F00327FA4 /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
+				0FE29E9423802A0000BC68C2 /* Info.plist */,
+				0F137A09239D95EB00EC6780 /* GoogleService-Info.plist */,
 				0F0D20FA238B15C3009F30EA /* loader.json */,
 				0F7D8F9623836CC70062B89C /* videoList.json */,
 				0FE29EBB2380A83F00BC68C2 /* characters.json */,
 			);
 			name = Jsons;
-			sourceTree = "<group>";
-		};
-		0FFF45C3239DB94100327FA4 /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				0FE29E9423802A0000BC68C2 /* Info.plist */,
-				0F137A09239D95EB00EC6780 /* GoogleService-Info.plist */,
-			);
-			path = Plist;
 			sourceTree = "<group>";
 		};
 		23783A910BB5F38D73E35EE7 /* Frameworks */ = {
