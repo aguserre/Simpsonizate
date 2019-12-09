@@ -40,11 +40,30 @@ struct SignInView: View {
                     .font(.system(size: 14))
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.blue), lineWidth: 1))
+                    .onTapGesture {
+                        let keyWindow = UIApplication.shared.connectedScenes
+                            .filter({$0.activationState == .foregroundActive})
+                            .map({$0 as? UIWindowScene})
+                            .compactMap({$0})
+                            .first?.windows
+                            .filter({$0.isKeyWindow}).first
+                        keyWindow?.endEditing(true)
+                    }
+                    
                
                 SecureField("Password", text: $password)
                 .font(.system(size: 14))
                 .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.blue), lineWidth: 1))
+                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.blue), lineWidth: 1))
+                .onTapGesture {
+                    let keyWindow = UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows
+                        .filter({$0.isKeyWindow}).first
+                    keyWindow?.endEditing(true)
+                }
 
             }
             .padding(.vertical, 64)
@@ -74,10 +93,7 @@ struct SignInView: View {
                 Text("Create an account")
                 .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color(.blue))
-                
-
             }
-            
         }
         .padding(.horizontal, 32)
     }
@@ -113,12 +129,30 @@ struct SignUpView : View {
                 TextField("Email adress", text: $email)
                 .font(.system(size: 14))
                 .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
+                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
+                .onTapGesture {
+                    let keyWindow = UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows
+                        .filter({$0.isKeyWindow}).first
+                    keyWindow?.endEditing(true)
+                }
 
                 SecureField("Password", text: $password)
                 .font(.system(size: 14))
                 .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
+                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
+                .onTapGesture {
+                    let keyWindow = UIApplication.shared.connectedScenes
+                        .filter({$0.activationState == .foregroundActive})
+                        .map({$0 as? UIWindowScene})
+                        .compactMap({$0})
+                        .first?.windows
+                        .filter({$0.isKeyWindow}).first
+                    keyWindow?.endEditing(true)
+                }
             }.padding(.vertical, 64)
             
             Button(action: signUp){
