@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0C4EB5239FE3150038C39B /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C4EB4239FE3150038C39B /* UserSettings.swift */; };
 		0F0D20F1238ABCD9009F30EA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0F0D20F0238ABCD9009F30EA /* Lottie */; };
 		0F0D20FB238B15C3009F30EA /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F0D20FA238B15C3009F30EA /* loader.json */; };
 		0F0E5DDA239BF6560015AE3E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E5DD9239BF6560015AE3E /* MenuView.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		0BEFFFBBD2AC305FA5340784 /* Pods-SwiftUI-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-List.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-List/Pods-SwiftUI-List.release.xcconfig"; sourceTree = "<group>"; };
+		0F0C4EB4239FE3150038C39B /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		0F0D20FA238B15C3009F30EA /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		0F0E5DD9239BF6560015AE3E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0F0E5DDB239BFF860015AE3E /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				0F768710238175190023D5D8 /* CharacterDetailView.swift */,
 				0F7D8F9E2384B81A0062B89C /* ModalVideoView.swift */,
 				0FF4B5BD238F031F00C095ED /* DrawView.swift */,
+				0F0C4EB4239FE3150038C39B /* UserSettings.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				0FE29EAE2380388500BC68C2 /* QuotesDAO.swift in Sources */,
 				0F7D8F9F2384B81A0062B89C /* ModalVideoView.swift in Sources */,
 				0F76870B23815E0F0023D5D8 /* CharacterView.swift in Sources */,
+				0F0C4EB5239FE3150038C39B /* UserSettings.swift in Sources */,
 				0F7D8FA52384E8890062B89C /* CircularSpringfieldImage.swift in Sources */,
 				0FFF45C1239DA44400327FA4 /* SignInView.swift in Sources */,
 				0F0E5DDA239BF6560015AE3E /* MenuView.swift in Sources */,

@@ -11,15 +11,13 @@ import SwiftUI
 struct MenuView: View {
     
     @Binding var menuShow: Bool
+    @State var isPresentedSettings = false
     @EnvironmentObject var session: SessionStore
+    
 
     var body: some View {
         VStack{
                 HStack {
-                    Image(systemName: "gear")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.black)
                     
                     Image("LaMori")
                     .resizable()
@@ -28,28 +26,17 @@ struct MenuView: View {
                     .clipShape(Circle())
                     .padding(.horizontal, 24)
                     
-                    Button(action: session.signOut){
-                        Text("Sign out")
-                        
-                    }
-                    
-                }.padding(.top, 20)
+                    Spacer()
+                                        
+               }.padding(.top, 20)
+
             
-                    Text(session.session?.name ?? "User")
-                    .foregroundColor(.black)
-                    .font(.system(size: 15, weight: .semibold))
-                    .padding(.top, 10)
-                    .padding(.bottom, 40)
-            
-            
-            Spacer()
             
             Image("homerDonut")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width - 80, height: 200)
-            
-            
+                .padding(.bottom)
             NavigationLink(destination: DrawView()) {
                 MenuRowView(rowActive: true, icon: "pencil", text: "Draw you Simpson")
             }
@@ -62,6 +49,20 @@ struct MenuView: View {
             NavigationLink(destination: SimpsonList()) {
                 MenuRowView(rowActive: true, icon: "person.crop.circle.fill", text: "Simpsons list")
             }
+            Spacer()
+
+            Divider()
+                
+            
+            NavigationLink(destination: UserSettings()) {
+                MenuRowView(rowActive: false, icon: "wrench.fill", text: "Configure your user")
+            }
+            Button(action: {
+                self.session.signOut()
+            }) {
+                MenuRowView(rowActive: false, icon: "multiply", text: "Sign Out")
+            }
+            
         }
         .padding(.vertical, 30)
         .background(LinearGradient(gradient: Gradient(colors: [.yellow, .purple,  .yellow]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 25))

@@ -17,7 +17,7 @@ struct MenuRowView: View {
     var body: some View {
         HStack{
             Image(systemName: icon)
-                .foregroundColor(rowActive ? Color(.black) : Color(.white))
+                .foregroundColor(rowActive ? Color(.black) : Color(.blue))
                 .font(.system(size: 15, weight: rowActive ? .bold : .regular))
                 .frame(width: 48, height: 32)
             
@@ -27,7 +27,7 @@ struct MenuRowView: View {
             Spacer()
         }
         .padding(4)
-        .background(Color.white.opacity(0.9))
+        .background(Color.white.opacity(0.5))
         .padding(.trailing,20)
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .offset(x: 20)
