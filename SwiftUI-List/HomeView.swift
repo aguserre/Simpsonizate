@@ -12,7 +12,6 @@ import Lottie
 
 struct HomeView: View {
     
-    @State var showSplash = true
     @State var menuShow = false
     
     var body: some View {
@@ -53,16 +52,6 @@ struct HomeView: View {
                     Spacer()
                 }
                 MenuView(menuShow: $menuShow)
-                
-                LaunchScreenCustom()
-                    .opacity(showSplash ? 1 : 0)
-                    .onAppear(){
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                          withAnimation() {
-                            self.showSplash = false
-                          }
-                        }
-                }
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("")
@@ -71,10 +60,5 @@ struct HomeView: View {
     
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView(showSplash: false)
-    }
-}
 
 

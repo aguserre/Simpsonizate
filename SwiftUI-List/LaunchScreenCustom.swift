@@ -23,13 +23,12 @@ struct LaunchScreenCustom: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 
-                Text("SIMPSONIZED")
+                Text("Loading...")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
                     .padding(4)
                     .animation(.easeOut(duration: 0.3))
-
                 
                 Image("donutFull")
                     .resizable()
@@ -49,11 +48,8 @@ struct LaunchScreenCustom: View {
                 .foregroundColor(.gray)
                 .padding(4)
                 .animation(.easeIn(duration: 0.4))
-
             }
         }
-
-        
     }
 }
 
