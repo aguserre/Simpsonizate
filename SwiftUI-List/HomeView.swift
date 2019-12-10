@@ -21,23 +21,25 @@ struct HomeView: View {
             
             ZStack{
                 
-                LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom).blur(radius: menuShow ? 30 : 0)
-                
+                LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom)
 
                 VStack {
                     Image("springfield")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .blur(radius: menuShow ? 30 : 0)
+                        .animation(Animation.easeOut(duration: 0.4))
                     CircularSpringfieldImage()
                         .offset(y: -100)
                     .blur(radius: menuShow ? 30 : 0)
+                    .animation(Animation.easeOut(duration: 0.4))
                     VStack{
                         Image("simp")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width-10, height: 150)
                             .offset(y: -100)
                         .blur(radius: menuShow ? 30 : 0)
+                        .animation(Animation.easeOut(duration: 0.4))
                         Button(action: {
                             self.menuShow.toggle()
                         }) {
@@ -59,7 +61,8 @@ struct HomeView: View {
                             Text("Menu")
                                 .font(.system(size: 15, weight: .semibold))
                                 .foregroundColor(.black)
-                            }
+                            }.blur(radius: menuShow ? 30 : 0)
+                            .animation(Animation.easeOut(duration: 0.4))
                         }
                     }
                     Spacer()
@@ -69,10 +72,8 @@ struct HomeView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("")
-            
         }
     }
-    
 }
 
 

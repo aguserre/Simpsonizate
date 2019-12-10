@@ -8,4 +8,6 @@ target 'SwiftUI-List' do
   # Pods for SwiftUI-List
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Core'
 end

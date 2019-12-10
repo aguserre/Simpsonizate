@@ -22,7 +22,7 @@ struct MenuView: View {
                     Image("LaMori")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 60, height: 60)
+                    .frame(width: 50, height: 50)
                     .clipShape(Circle())
                     .padding(.horizontal, 24)
                     

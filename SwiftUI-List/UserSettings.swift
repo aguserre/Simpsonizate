@@ -8,13 +8,30 @@
 
 import SwiftUI
 
+struct dataset: Identifiable {
+    var id = ""
+    var name = ""
+    var lastName = ""
+    var email = ""
+    var nickname = ""
+}
+
+
 struct UserSettings: View {
     
     @EnvironmentObject var session: SessionStore
+    @State var name = ""
+    @State var email = ""
+    @State var displayName = ""
     
     var body: some View {
+        VStack{
+            Text(session.session?.email ?? "User")
+            Text(session.session?.name ?? "No name")
+            
+            TextField("username", text: $displayName)
 
-        Text(session.session?.email ?? "User")
+        }
 
     }
 }

@@ -12,12 +12,16 @@ struct SignUpView : View {
     @State var email = ""
     @State var password = ""
     @State var error = ""
+    @State var errorMsg = ""
+    @State var showa = false
     @EnvironmentObject var session: SessionStore
     
     func signUp(){
            session.signUp(email: email, password: password) { result, error in
                if let error = error {
                    self.error = error.localizedDescription
+                    self.errorMsg = self.error
+                    self.showa.toggle()
                } else {
                    self.email = ""
                    self.password = ""
@@ -84,25 +88,24 @@ struct SignUpView : View {
                     .cornerRadius(15)
                     .shadow(radius: 10)
                     
-                    Button(action: signUp) {
-                        Text("Sign In")
-                        .frame(width: 150, height: 40)
-                        .font(.system(size: 15))
-                        .foregroundColor(.black)
-                        .background(LinearGradient(gradient: .init(colors: [Color("color2"), Color("color1")]), startPoint: .leading, endPoint: .bottomTrailing))
-                        .cornerRadius(20)
-                        .shadow(radius: 8)
+                    HStack{
+                        Button(action:  {
+                            self.signUp()
+                        }) {
+                            Text("Sign In")
+                            .frame(width: 150, height: 40)
+                            .font(.system(size: 15))
+                            .foregroundColor(.black)
+                            .background(LinearGradient(gradient: .init(colors: [Color("color2"), Color("color1")]), startPoint: .leading, endPoint: .bottomTrailing))
+                            .cornerRadius(20)
+                            .shadow(radius: 8)
+                        }
+                    }.alert(isPresented: $showa) {
+                        return Alert(title: Text(self.errorMsg))
                     }
                     
                 }.padding(.vertical, 10)
                 
-                
-                if (error != ""){
-                    Text(error)
-                    .font(.system(size: 14))
-                    .foregroundColor(.red)
-                    .padding()
-                }
                 Spacer()
                 VStack{
                     Image("Simpsons_tv")
