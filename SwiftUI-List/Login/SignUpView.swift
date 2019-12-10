@@ -28,8 +28,8 @@ struct SignUpView : View {
     var body: some View {
         
         ZStack {
-            Color.yellow
-                .edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors:[Color("color2"), Color("color1")]), startPoint: .leading, endPoint: .trailing)
+            .edgesIgnoringSafeArea(.all)
             
             VStack{
                 Text("Create an account")
@@ -38,45 +38,65 @@ struct SignUpView : View {
                 .font(.system(size: 18, weight: .medium))
                     .foregroundColor(Color(.gray))
                 
-                VStack(spacing: 10){
-                    TextField("Email adress", text: $email)
-                    .font(.system(size: 14))
-                    .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
-                    .onTapGesture {
-                        let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .map({$0 as? UIWindowScene})
-                            .compactMap({$0})
-                            .first?.windows
-                            .filter({$0.isKeyWindow}).first
-                        keyWindow?.endEditing(true)
+                VStack(spacing: 20){
+                    HStack{
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .frame(width: 18, height: 18)
+                        TextField("Email adress", text: $email)
+                            .font(.system(size: 18))
+                            .padding(.leading, 12)
+                            .onTapGesture {
+                                let keyWindow = UIApplication.shared.connectedScenes
+                                    .filter({$0.activationState == .foregroundActive})
+                                    .map({$0 as? UIWindowScene})
+                                    .compactMap({$0})
+                                    .first?.windows
+                                    .filter({$0.isKeyWindow}).first
+                                keyWindow?.endEditing(true)
+                            }
                     }
+                    .padding(12)
+                    .background(Color(.white))
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
 
-                    SecureField("Password", text: $password)
-                    .font(.system(size: 14))
-                    .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black), lineWidth: 1))
-                    .onTapGesture {
-                        let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .map({$0 as? UIWindowScene})
-                            .compactMap({$0})
-                            .first?.windows
-                            .filter({$0.isKeyWindow}).first
-                        keyWindow?.endEditing(true)
+                    HStack{
+                        
+                        Image(systemName: "lock.fill")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                        
+                        SecureField("Password", text: $password)
+                        .font(.system(size: 18))
+                        .padding(.leading, 12)
+                        .onTapGesture {
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter({$0.activationState == .foregroundActive})
+                                .map({$0 as? UIWindowScene})
+                                .compactMap({$0})
+                                .first?.windows
+                                .filter({$0.isKeyWindow}).first
+                            keyWindow?.endEditing(true)
+                        }
+                    }.padding(12)
+                    .background(Color(.white))
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
+                    
+                    Button(action: signUp) {
+                        Text("Sign In")
+                        .frame(width: 150, height: 40)
+                        .font(.system(size: 15))
+                        .foregroundColor(.black)
+                        .background(LinearGradient(gradient: .init(colors: [Color("color2"), Color("color1")]), startPoint: .leading, endPoint: .bottomTrailing))
+                        .cornerRadius(20)
+                        .shadow(radius: 8)
                     }
-                }.padding(.vertical, 64)
+                    
+                }.padding(.vertical, 10)
                 
-                Button(action: signUp){
-                    Text("Create account")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 50)
-                        .foregroundColor(.white)
-                        .font(.system(size: 14, weight: .bold))
-                        .background(LinearGradient(gradient: Gradient(colors: [.yellow,.purple]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(5)
-                }
+                
                 if (error != ""){
                     Text(error)
                     .font(.system(size: 14))
@@ -84,7 +104,19 @@ struct SignUpView : View {
                     .padding()
                 }
                 Spacer()
+                VStack{
+                    Image("Simpsons_tv")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width - 40, height: 280)
+                    
+                }
             }.padding(.horizontal, 32)
         }
+    }
+}
+
+struct signUp_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
     }
 }
