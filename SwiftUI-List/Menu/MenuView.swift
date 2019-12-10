@@ -15,10 +15,12 @@ struct MenuView: View {
 
     var body: some View {
         VStack{
-            
-            HStack{
-                    Spacer()
-                VStack {
+                HStack {
+                    Image(systemName: "gear")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.black)
+                    
                     Image("LaMori")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -26,18 +28,19 @@ struct MenuView: View {
                     .clipShape(Circle())
                     .padding(.horizontal, 24)
                     
-                    Text("Morita")
-                    .foregroundColor(.white)
-                    .font(.system(size: 20, weight: .semibold))
-                    .padding(.top, 10)
-                    .padding(.bottom, 40)
-                    
                     Button(action: session.signOut){
                         Text("Sign out")
+                        
                     }
-                }
-            }
-            .padding(.top, 20)
+                    
+                }.padding(.top, 20)
+            
+                    Text(session.session?.name ?? "User")
+                    .foregroundColor(.black)
+                    .font(.system(size: 15, weight: .semibold))
+                    .padding(.top, 10)
+                    .padding(.bottom, 40)
+            
             
             Spacer()
             

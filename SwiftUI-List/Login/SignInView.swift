@@ -13,13 +13,11 @@ struct SignInView: View {
     @State var password = ""
     @State var error = ""
     @EnvironmentObject var session: SessionStore
-    @State var showAlert = false
     
     func signIn(){
         session.signIn(email: email, password: password) { result, error in
             if let error = error {
                 self.error = error.localizedDescription
-                self.showAlert.toggle()
             } else {
                 self.email = ""
                 self.password = ""

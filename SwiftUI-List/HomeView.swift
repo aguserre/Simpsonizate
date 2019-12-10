@@ -13,6 +13,7 @@ import Lottie
 struct HomeView: View {
     
     @State var menuShow = false
+    @State var animationAmount : CGFloat = 1
     
     var body: some View {
         
@@ -40,12 +41,20 @@ struct HomeView: View {
                             Image("donutFull")
                                 .renderingMode(.original)
                                 .resizable()
-                                .frame(width: 50, height: 50)
+                                .frame(width: 50, height:  50)
                                 .imageScale(.large)
                                 .foregroundColor(.black)
-                            Text("Menu")
-                                .foregroundColor(.black)
+                                .scaleEffect(animationAmount)
+                                .animation(Animation.easeInOut(duration: 1)
+                                    .repeatForever(autoreverses: true))
+                                .onAppear() {
+                                    self.animationAmount += 1
+                                }
+                            .padding()
                                 
+                            Text("Menu")
+                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundColor(.black)
                             }
                         }
                     }

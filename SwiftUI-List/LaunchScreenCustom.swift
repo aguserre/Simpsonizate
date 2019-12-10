@@ -19,8 +19,9 @@ struct LaunchScreenCustom: View {
     var body: some View {
        
         ZStack {
-            Color.yellow
-                .edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors:[Color("color2"), Color("color1")]), startPoint: .leading, endPoint: .trailing)
+            .edgesIgnoringSafeArea(.all)
+            
             VStack{
                 
                 Text("Loading...")

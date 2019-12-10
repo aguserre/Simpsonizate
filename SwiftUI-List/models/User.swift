@@ -11,9 +11,11 @@ import Foundation
 struct User {
     var uid: String
     var email: String
+    var name: String
     
-    init(uid: String, email: String) {
+    init(uid: String, email: String, name: String) {
         self.uid = uid
         self.email = email
+        self.name = name
     }
 }
