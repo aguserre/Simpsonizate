@@ -29,14 +29,15 @@ struct MenuView: View {
                     Spacer()
                                         
                }.padding(.top, 20)
+            
+            Spacer()
 
-            
-            
             Image("homerDonut")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width - 80, height: 200)
                 .padding(.bottom)
+            
             NavigationLink(destination: DrawView()) {
                 MenuRowView(rowActive: true, icon: "pencil", text: "Draw you Simpson")
             }
@@ -49,10 +50,12 @@ struct MenuView: View {
             NavigationLink(destination: SimpsonList()) {
                 MenuRowView(rowActive: true, icon: "person.crop.circle.fill", text: "Simpsons list")
             }
-            Spacer()
 
             Divider()
-                
+                .foregroundColor(.black)
+                .padding(.vertical, 15)
+                .padding(.horizontal, 15)
+            
             
             NavigationLink(destination: UserSettings()) {
                 MenuRowView(rowActive: false, icon: "wrench.fill", text: "Configure your user")
@@ -65,7 +68,7 @@ struct MenuView: View {
             
         }
         .padding(.vertical, 30)
-        .background(LinearGradient(gradient: Gradient(colors: [.yellow, .purple,  .yellow]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 25))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("color1"), Color("color2")]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 25))
         .padding(.trailing, 80)
         .offset(x: menuShow ? 0 : -UIScreen.main.bounds.width)
         .animation(.default)

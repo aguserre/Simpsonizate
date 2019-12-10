@@ -27,9 +27,9 @@ struct MenuRowView: View {
             Spacer()
         }
         .padding(4)
-        .background(Color.white.opacity(0.5))
+        .background(Color.white.opacity(0.7))
         .padding(.trailing,20)
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous)).shadow(radius: 10)
         .offset(x: 20)
     }
 }

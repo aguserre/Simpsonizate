@@ -21,19 +21,23 @@ struct HomeView: View {
             
             ZStack{
                 
-                LinearGradient(gradient: Gradient(colors: [.yellow, .yellow, .gray]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom).blur(radius: menuShow ? 30 : 0)
+                
 
                 VStack {
                     Image("springfield")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .blur(radius: menuShow ? 30 : 0)
                     CircularSpringfieldImage()
                         .offset(y: -100)
+                    .blur(radius: menuShow ? 30 : 0)
                     VStack{
                         Image("simp")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width-10, height: 150)
                             .offset(y: -100)
+                        .blur(radius: menuShow ? 30 : 0)
                         Button(action: {
                             self.menuShow.toggle()
                         }) {
@@ -45,10 +49,10 @@ struct HomeView: View {
                                 .imageScale(.large)
                                 .foregroundColor(.black)
                                 .scaleEffect(animationAmount)
-                                .animation(Animation.easeInOut(duration: 1)
+                                .animation(Animation.easeInOut(duration: 0.4)
                                     .repeatForever(autoreverses: true))
                                 .onAppear() {
-                                    self.animationAmount += 1
+                                    self.animationAmount += 0.5
                                 }
                             .padding()
                                 
@@ -60,10 +64,12 @@ struct HomeView: View {
                     }
                     Spacer()
                 }
+
                 MenuView(menuShow: $menuShow)
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("")
+            
         }
     }
     
