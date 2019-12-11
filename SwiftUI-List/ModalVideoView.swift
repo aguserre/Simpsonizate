@@ -21,7 +21,7 @@ struct ModalVideo: View {
     var body: some View {
         
         ZStack{
-            Color.yellow
+            LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 
@@ -41,11 +41,7 @@ struct ModalVideo: View {
             }
         
         }.navigationBarTitle(Text("Videos"))
-        
-        
     }
-
-
 }
 
 

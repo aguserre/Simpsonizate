@@ -33,3 +33,33 @@ struct MenuRowView: View {
         .offset(x: 20)
     }
 }
+
+struct MenuRowViewUser: View {
+    
+    var rowActive: Bool
+    var icon = "house"
+    var nickName = "newUser"
+    
+    var body: some View {
+            HStack{
+                Spacer()
+                
+                Image(icon)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .clipShape(Circle())
+                
+                Text(nickName)
+                    .font(.custom("EuphemiaUCAS-Bold ", size: 15))
+                
+                
+            }
+            .padding(4)
+            .background(Color.white.opacity(0.7))
+            .padding(.leading,50)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular)).shadow(radius: 10)
+            .offset(x: -200)
+
+        
+    }
+}

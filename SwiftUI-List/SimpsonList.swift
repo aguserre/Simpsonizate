@@ -17,7 +17,7 @@ struct SimpsonList: View {
                 ForEach(families, id: \.name) { character in
                     CharacterView(simpson: character)
                 }
-            }
+                }.background(LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom))
             .navigationBarTitle(Text("Characters"))
     }
 }

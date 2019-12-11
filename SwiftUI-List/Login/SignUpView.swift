@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SignUpView : View {
     @State var email = ""
-    @State var password = ""
+    @State var password1 = ""
+    @State var password2 = ""
     @State var nickName = ""
     @State var error = ""
     @State var errorMsg = ""
@@ -19,14 +20,15 @@ struct SignUpView : View {
     @EnvironmentObject var session: SessionStore
     
     func signUp(){
-           session.signUp(email: email, password: password) { result, error in
+           session.signUp(email: email, password: password1) { result, error in
                if let error = error {
                    self.error = error.localizedDescription
                     self.errorMsg = self.error
                     self.showa.toggle()
                } else {
                    self.email = ""
-                   self.password = ""
+                   self.password1 = ""
+                    self.password2 = ""
                }
            }
        }
@@ -67,14 +69,42 @@ struct SignUpView : View {
                     .background(Color(.white))
                     .cornerRadius(15)
                     .shadow(radius: 10)
+                    
+                    Divider()
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 10)
 
+                    
                     HStack{
                         
                         Image(systemName: "lock.fill")
                         .resizable()
                         .frame(width: 18, height: 18)
                         
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $password1)
+                        .font(.system(size: 18))
+                        .padding(.leading, 12)
+                        .onTapGesture {
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter({$0.activationState == .foregroundActive})
+                                .map({$0 as? UIWindowScene})
+                                .compactMap({$0})
+                                .first?.windows
+                                .filter({$0.isKeyWindow}).first
+                            keyWindow?.endEditing(true)
+                        }
+                    }.padding(12)
+                    .background(Color(.white))
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
+                    
+                    HStack{
+                        
+                        Image(systemName: "lock.fill")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                        
+                        SecureField("Repeat password", text: $password2)
                         .font(.system(size: 18))
                         .padding(.leading, 12)
                         .onTapGesture {
@@ -93,11 +123,12 @@ struct SignUpView : View {
                     
                     HStack{
                         Button(action:  {
-                            
-                            self.signUp()
-                            
-                            
-                            
+                            if self.password1 == self.password2 {
+                                self.signUp()
+                            } else {
+                                self.errorMsg = "The password is not equal"
+                                self.showa.toggle()
+                            }
                         }) {
                             Text("Sign In")
                             .frame(width: 150, height: 40)

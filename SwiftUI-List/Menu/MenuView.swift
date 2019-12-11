@@ -19,21 +19,12 @@ struct MenuView: View {
 
     var body: some View {
         VStack{
+
                 HStack {
-                    
-                    Image("LaMori")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-                    .padding(.horizontal, 24)
-                    
-                    Text(userName ?? "New User")
-                    
+                    MenuRowViewUser(rowActive: false, icon: "LaMori", nickName: userName ?? "userName")
                     Spacer()
-                                        
-               }.padding(.top, 20)
-            
+               }.padding(.top, 30)
+
             Spacer()
 
             Image("homerDonut")

@@ -28,7 +28,8 @@ struct UserSettings: View {
                 self.errorMsg = self.error
                 self.showa.toggle()
             } else {
-            self.errorMsg = "Success! Your name will be changed the next time you log in"
+            self.errorMsg = "Success! Your nickname will be changed the next time you sign in"
+                self.displayName = ""
                 self.showa.toggle()
             }
         })
@@ -44,104 +45,109 @@ struct UserSettings: View {
                 }else {
                 self.errorMsg = "Success! Your password was changed"
                     self.showa.toggle()
+                    self.newPassword1 = ""
+                    self.newPassword2 = ""
                 }
             })
         } else {
             self.errorMsg = "The password not equal"
             self.showa.toggle()
         }
-        
     }
     
     var body: some View {
-        VStack{
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("color2"),Color("color2"),Color("color1")]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
             
-            HStack{
+            VStack {
                 Text("Select your nickname")
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .frame(width: 18, height: 18)
-                TextField("NickName", text: $displayName)
-                    .font(.system(size: 18))
-                    .padding(.leading, 12)
-                    .onTapGesture {
-                        let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .map({$0 as? UIWindowScene})
-                            .compactMap({$0})
-                            .first?.windows
-                            .filter({$0.isKeyWindow}).first
-                        keyWindow?.endEditing(true)
-                    }
-            }
-            .padding(12)
-            .background(Color(.white))
-            .cornerRadius(15)
-            .shadow(radius: 10)
-            
-            Button(action: {
-                self.changeDisplayName()
-            }) {
-                Text("Save")
-            }.alert(isPresented: $showa) {
-                return Alert(title: Text(self.errorMsg))
-            }
-            
-            Text("Change password")
-            HStack{
-                Image(systemName: "lock.fill")
-                    .resizable()
-                    .frame(width: 18, height: 18)
-                SecureField("Password", text: $newPassword1)
-                    .font(.system(size: 18))
-                    .padding(.leading, 12)
-                    .onTapGesture {
-                        let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .map({$0 as? UIWindowScene})
-                            .compactMap({$0})
-                            .first?.windows
-                            .filter({$0.isKeyWindow}).first
-                        keyWindow?.endEditing(true)
-                    }
-            }
-            .padding(12)
-            .background(Color(.white))
-            .cornerRadius(15)
-            .shadow(radius: 10)
-            
-            HStack{
-                Image(systemName: "lock.fill")
-                    .resizable()
-                    .frame(width: 18, height: 18)
-                SecureField("Rewrite", text: $newPassword2)
-                    .font(.system(size: 18))
-                    .padding(.leading, 12)
-                    .onTapGesture {
-                        let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .map({$0 as? UIWindowScene})
-                            .compactMap({$0})
-                            .first?.windows
-                            .filter({$0.isKeyWindow}).first
-                        keyWindow?.endEditing(true)
-                    }
-            }
-            .padding(12)
-            .background(Color(.white))
-            .cornerRadius(15)
-            .shadow(radius: 10)
-            
-            Button(action: {
-                self.changePassword()
-            }) {
-                Text("Save")
-            }.alert(isPresented: $showa) {
-                return Alert(title: Text(self.errorMsg))
-            }
-            
-        }
 
+                HStack{
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                    TextField("NickName", text: $displayName)
+                        .font(.system(size: 18))
+                        .padding(.leading, 12)
+                        .onTapGesture {
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter({$0.activationState == .foregroundActive})
+                                .map({$0 as? UIWindowScene})
+                                .compactMap({$0})
+                                .first?.windows
+                                .filter({$0.isKeyWindow}).first
+                            keyWindow?.endEditing(true)
+                        }
+                }
+                .padding(12)
+                .background(Color(.white))
+                .cornerRadius(15)
+                .shadow(radius: 10)
+                
+                Button(action: {
+                    self.changeDisplayName()
+                }) {
+                    Text("Save")
+                }.alert(isPresented: $showa) {
+                    return Alert(title: Text(self.errorMsg))
+                }
+                
+                Text("Change password")
+                HStack{
+                    Image(systemName: "lock.fill")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                    SecureField("Password", text: $newPassword1)
+                        .font(.system(size: 18))
+                        .padding(.leading, 12)
+                        .onTapGesture {
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter({$0.activationState == .foregroundActive})
+                                .map({$0 as? UIWindowScene})
+                                .compactMap({$0})
+                                .first?.windows
+                                .filter({$0.isKeyWindow}).first
+                            keyWindow?.endEditing(true)
+                        }
+                }
+                .padding(12)
+                .background(Color(.white))
+                .cornerRadius(15)
+                .shadow(radius: 10)
+                
+                HStack{
+                    Image(systemName: "lock.fill")
+                        .resizable()
+                        .frame(width: 18, height: 18)
+                    SecureField("Rewrite", text: $newPassword2)
+                        .font(.system(size: 18))
+                        .padding(.leading, 12)
+                        .onTapGesture {
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter({$0.activationState == .foregroundActive})
+                                .map({$0 as? UIWindowScene})
+                                .compactMap({$0})
+                                .first?.windows
+                                .filter({$0.isKeyWindow}).first
+                            keyWindow?.endEditing(true)
+                        }
+                }
+                .padding(12)
+                .background(Color(.white))
+                .cornerRadius(15)
+                .shadow(radius: 10)
+                
+                Button(action: {
+                    self.changePassword()
+                }) {
+                    Text("Save")
+                }.alert(isPresented: $showa) {
+                    return Alert(title: Text(self.errorMsg))
+                }
+                Spacer()
+            }
+        }.navigationBarTitle(Text("Settings"))
     }
 }
 

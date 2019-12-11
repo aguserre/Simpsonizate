@@ -69,7 +69,7 @@ struct HomeView: View {
                                 .padding()
                                     
                                 Text("Menu")
-                                    .font(.system(size: 15, weight: .semibold))
+                                    .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(.black)
                                 
                             }
