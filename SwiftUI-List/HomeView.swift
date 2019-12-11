@@ -28,21 +28,23 @@ struct HomeView: View {
 
                 VStack {
                     Image("springfield")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .blur(radius: menuShow ? 30 : 0)
-                        .animation(Animation.easeOut(duration: 0.4))
-                    CircularSpringfieldImage()
-                        .offset(y: -100)
-                    .blur(radius: menuShow ? 30 : 0)
-                    .animation(Animation.easeOut(duration: 0.4))
-                    VStack{
-                        Image("simp")
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.width-10, height: 150)
-                            .offset(y: -100)
+                        .aspectRatio(contentMode: .fit)
                         .blur(radius: menuShow ? 30 : 0)
                         .animation(Animation.easeOut(duration: 0.4))
+                    
+                    CircularSpringfieldImage()
+                        .offset(y: -100)
+                        .blur(radius: menuShow ? 30 : 0)
+                        .animation(Animation.easeOut(duration: 0.4))
+                    
+                    VStack{
+                        Image("simp")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width-10, height: 150)
+                            .offset(y: -100)
+                            .blur(radius: menuShow ? 30 : 0)
+                            .animation(Animation.easeOut(duration: 0.4))
                         
                         Button(action: {
                             if let userVerified = self.user, !userVerified {
@@ -66,8 +68,6 @@ struct HomeView: View {
                                     .onAppear() {
                                         self.animationAmount += 0.5
                                     }
-                                .padding()
-                                    
                                 Text("Menu")
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(.black)

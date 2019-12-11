@@ -19,11 +19,9 @@ struct MenuView: View {
 
     var body: some View {
         VStack{
-
-                HStack {
-                    MenuRowViewUser(rowActive: false, icon: "LaMori", nickName: userName ?? "userName")
-                    Spacer()
-               }.padding(.top, 30)
+            
+            MenuRowViewUser(rowActive: false, icon: "LaMori", nickName: userName ?? "userName")
+                .offset(y: 40)
 
             Spacer()
 
@@ -48,7 +46,7 @@ struct MenuView: View {
 
             Divider()
                 .foregroundColor(.black)
-                .padding(.vertical, 15)
+                .padding(.vertical, 10)
                 .padding(.horizontal, 15)
             
             
@@ -59,14 +57,15 @@ struct MenuView: View {
                 self.session.signOut()
             }) {
                 MenuRowView(rowActive: false, icon: "multiply", text: "Sign Out")
-            }
+            }.padding(.bottom, 0)
             
         }
         .padding(.vertical, 30)
         .background(LinearGradient(gradient: Gradient(colors: [Color("color1"), Color("color2")]), startPoint: .top, endPoint: .bottom).cornerRadius(20).shadow(radius: 25))
-        .padding(.trailing, 80)
+        .padding(.trailing, 70)
         .offset(x: menuShow ? 0 : -UIScreen.main.bounds.width)
         .animation(.default)
+        .edgesIgnoringSafeArea(.bottom)
         .onTapGesture {
             self.menuShow.toggle()
         }

@@ -146,7 +146,7 @@ struct UserSettings: View {
                     return Alert(title: Text(self.errorMsg))
                 }
                 Spacer()
-            }
+            }.padding(.vertical, 15)
         }.navigationBarTitle(Text("Settings"))
     }
 }

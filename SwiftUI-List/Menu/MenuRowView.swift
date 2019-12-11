@@ -23,7 +23,8 @@ struct MenuRowView: View {
             
             Text(text)
                 .font(.system(size: 15, weight: rowActive ? .bold : .regular))
-            
+                .foregroundColor(rowActive ? Color(.blue) : Color(.black))
+                
             Spacer()
         }
         .padding(4)
@@ -51,14 +52,12 @@ struct MenuRowViewUser: View {
                 
                 Text(nickName)
                     .font(.custom("EuphemiaUCAS-Bold ", size: 15))
-                
-                
             }
             .padding(4)
             .background(Color.white.opacity(0.7))
             .padding(.leading,50)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .circular)).shadow(radius: 10)
-            .offset(x: -200)
+            .offset(x: -150)
 
         
     }
