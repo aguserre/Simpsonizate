@@ -11,8 +11,10 @@ import SwiftUI
 struct SignUpView : View {
     @State var email = ""
     @State var password = ""
+    @State var nickName = ""
     @State var error = ""
     @State var errorMsg = ""
+    @State var verified = false
     @State var showa = false
     @EnvironmentObject var session: SessionStore
     
@@ -43,6 +45,7 @@ struct SignUpView : View {
                     .foregroundColor(Color(.gray))
                 
                 VStack(spacing: 20){
+                    
                     HStack{
                         Image(systemName: "person.fill")
                             .resizable()
@@ -90,7 +93,11 @@ struct SignUpView : View {
                     
                     HStack{
                         Button(action:  {
+                            
                             self.signUp()
+                            
+                            
+                            
                         }) {
                             Text("Sign In")
                             .frame(width: 150, height: 40)

@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct MenuView: View {
     
     @Binding var menuShow: Bool
     @State var isPresentedSettings = false
+    @State var userName = Auth.auth().currentUser?.displayName
     @EnvironmentObject var session: SessionStore
     
 
@@ -25,6 +27,8 @@ struct MenuView: View {
                     .frame(width: 50, height: 50)
                     .clipShape(Circle())
                     .padding(.horizontal, 24)
+                    
+                    Text(userName ?? "New User")
                     
                     Spacer()
                                         
