@@ -62,6 +62,7 @@ struct UserSettings: View {
             
             VStack {
                 Text("Select your nickname")
+                    .padding(.top, 30)
 
                 HStack{
                     Image(systemName: "person.fill")
@@ -91,9 +92,12 @@ struct UserSettings: View {
                     Text("Save")
                 }.alert(isPresented: $showa) {
                     return Alert(title: Text(self.errorMsg))
-                }
+                }.padding(.bottom, 30)
+                
+                Divider()
                 
                 Text("Change password")
+                    .padding(.top, 30)
                 HStack{
                     Image(systemName: "lock.fill")
                         .resizable()
@@ -146,8 +150,9 @@ struct UserSettings: View {
                     return Alert(title: Text(self.errorMsg))
                 }
                 Spacer()
-            }.padding(.vertical, 15)
+            }.padding(.horizontal, 15)
         }.navigationBarTitle(Text("Settings"))
+        
     }
 }
 
